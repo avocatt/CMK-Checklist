@@ -72,20 +72,9 @@ npx expo start
 
 ### Planned Features
 - [ ] Floating action button for quick category navigation
-- [ ] Progress tracking (percentage complete per category)
-- [ ] Export/import functionality for answers
-- [ ] Multi-language support
 - [ ] Swipe gestures for categories
-- [ ] Undo feature for accidental taps
-- [ ] Statistics view
-- [ ] Share functionality for checklist
 
 ### Enhancement Ideas
-- [ ] Add support for attachments
-- [ ] Implement cloud sync
-- [ ] Add user authentication
-- [ ] Add collaborative features
-- [ ] Create a web version
 
 ## Contributing
 
