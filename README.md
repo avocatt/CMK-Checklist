@@ -2,6 +2,23 @@
 
 A mobile application built with React Native and Expo for lawyers to track and manage their CMK (Criminal Procedure Law) checklist items.
 
+## Screenshots
+
+### Main Interface
+![Main Interface](docs/images/main-interface.png)
+
+### Category View with Expandable Sections
+![Category View](docs/images/category-view.png)
+
+### Search Functionality with Highlighting
+![Search Feature](docs/images/search-feature.png)
+
+### Dark Mode Support
+![Dark Mode](docs/images/dark-mode.png)
+
+### Legal References with Popup View
+![Legal References](docs/images/legal-references.png)
+
 ## Features
 
 ### Core Functionality
@@ -48,10 +65,12 @@ src/
 ├── screens/
 │   └── ChecklistScreen.tsx    # Main screen component
 ├── data/
-│   └── checklist.ts          # Checklist data and structure
+│   ├── checklist.ts          # Checklist data and structure
+│   └── legalReferences.ts    # Legal reference data
 ├── types/
-│   └── index.ts              # TypeScript type definitions
-└── components/               # Future component directory
+│   └── index.ts             # TypeScript type definitions
+└── hooks/
+    └── useChecklist.ts      # Custom hook for checklist logic
 ```
 
 ## Getting Started
