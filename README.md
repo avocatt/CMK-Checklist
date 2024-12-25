@@ -2,6 +2,8 @@
 
 A mobile application built with React Native and Expo for lawyers to track and manage their CMK (Criminal Procedure Law) checklist items.
 
+Checklist was created by avukathakleri.net (https://www.avukathaklari.net/zorunlu-mudafinin-cmk-kontrol-listesi/)
+
 ## Screenshots
 
 ### Main Interface
