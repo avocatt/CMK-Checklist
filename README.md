@@ -50,11 +50,11 @@ See the app in action:
 
 | Main Interface                                  | Category View with Expansion                        | Search Functionality                                |
 | :---------------------------------------------- | :-------------------------------------------------- | :-------------------------------------------------- |
-| ![Main Interface](docs/images/main-interface.png) | ![Category View](docs/images/category-view.png) | ![Search Feature](docs/images/search-feature.png) |
+| <img src="docs/images/main-interface.png" alt="Main Interface" width="250"> | <img src="docs/images/category-view.png" alt="Category View" width="250"> | <img src="docs/images/search-feature.png" alt="Search Feature" width="250"> |
 
 | Dark Mode Support                           | Legal References Popup                                |
 | :------------------------------------------ | :---------------------------------------------------- |
-| ![Dark Mode](docs/images/dark-mode.png) | ![Legal References](docs/images/legal-references.png) |
+| <img src="docs/images/dark-mode.png" alt="Dark Mode" width="250"> | <img src="docs/images/legal-references.png" alt="Legal References" width="250"> |
 
 ---
 
