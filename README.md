@@ -1,3 +1,8 @@
+Here's the fixed layout for the "Ekran Görüntüleri" section. The problem was that you tried to add two more columns to a 4-column table definition. Markdown tables require a consistent number of columns per row.
+
+The solution is to split the screenshots into two separate tables: one for the four images, and another for the remaining two.
+
+```markdown
 # ⚖️ CMK Kontrol Listesi Uygulaması
 
 **Zorunlu Müdafinin (CMK) Görev Takip Listesi**
@@ -33,7 +38,11 @@ Uygulamayı çalışırken görün:
 | Ana Ekran (Dava Listesi)                                      | Ana Kontrol Listesi Arayüzü                    | Koyu Mod Desteği                            | Hukuki Referanslar Pop-up'ı                           |
 | :------------------------------------------------------------ | :---------------------------------------------- | :------------------------------------------ | :---------------------------------------------------- |
 | <img src="docs/images/home-screen.png" alt="Home Screen" width="250"> | <img src="docs/images/main-interface.png" alt="Main Interface" width="250"> | <img src="docs/images/dark-mode.png" alt="Dark Mode" width="250"> | <img src="docs/images/legal-references.png" alt="Legal References" width="250"> |
+
+<br> <!-- Added a line break for better visual separation between tables -->
+
 | Kategori Görünümü ve Genişletme                               | Arama İşlevselliği                                |
+| :------------------------------------------------------------ | :------------------------------------------------ |
 | <img src="docs/images/category-view.png" alt="Category View" width="250"> | <img src="docs/images/search-feature.png" alt="Search Feature" width="250"> |
 
 ---
@@ -144,3 +153,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## 📧 İletişim
 
 *   https://www.linkedin.com/in/emreterzi/
+```
