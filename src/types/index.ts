@@ -32,6 +32,7 @@ export interface CaseChecklist {
   name: string; // User-defined name for the case/duty
   answers: Record<string, string | boolean>;
   generalNotes?: string; // General notes for the entire case
+  questionNotes: Record<string, string>; // New: Notes specific to individual questions
   lastUpdated: string;
   createdAt: string;
 }

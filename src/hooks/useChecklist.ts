@@ -63,6 +63,7 @@ export const useChecklist = () => {
       name,
       answers: {},
       generalNotes: '',
+      questionNotes: {}, // Initialize new field
       lastUpdated: now,
       createdAt: now,
     };
@@ -113,6 +114,31 @@ export const useChecklist = () => {
     await saveAllChecklists(updatedChecklists);
   }, [allChecklists, activeChecklistId, saveAllChecklists]);
 
+  const updateQuestionNote = useCallback(async (questionId: string, note: string) => {
+    if (!activeChecklistId) return;
+
+    const updatedChecklists = allChecklists.map(c => {
+      if (c.id === activeChecklistId) {
+        // If the note is empty, remove it from the record to keep it clean
+        const newQuestionNotes = { ...c.questionNotes };
+        if (note.trim() === '') {
+          delete newQuestionNotes[questionId];
+        } else {
+          newQuestionNotes[questionId] = note;
+        }
+
+        return {
+          ...c,
+          questionNotes: newQuestionNotes,
+          lastUpdated: new Date().toISOString(),
+        };
+      }
+      return c;
+    });
+    setAllChecklists(updatedChecklists);
+    await saveAllChecklists(updatedChecklists);
+  }, [allChecklists, activeChecklistId, saveAllChecklists]);
+
   const resetActiveChecklistProgress = useCallback(async () => {
     if (!activeChecklistId) return;
 
@@ -122,6 +148,7 @@ export const useChecklist = () => {
           ...c,
           answers: {},
           generalNotes: c.generalNotes || '', // Preserve general notes or reset as per requirement
+          questionNotes: {}, // Reset question notes
           lastUpdated: new Date().toISOString(),
         };
       }
@@ -170,6 +197,7 @@ export const useChecklist = () => {
     selectChecklist, // Now memoized
     answerQuestion, // Now memoized
     updateGeneralNotes, // Now memoized
+    updateQuestionNote, // New: Function to update individual question notes
     resetActiveChecklistProgress, // Now memoized
     deleteChecklist, // Now memoized
     renameChecklist, // Now memoized

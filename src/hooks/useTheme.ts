@@ -10,12 +10,12 @@ export const lightColors = {
   accentGreen: '#34C759', // Apple Green
   border: '#D1D1D6', // Apple System Gray 4
   placeholder: '#C7C7CD', // Apple System Gray 2
-  destructive: '#FF3B30', // Apple Red
+  destructive: '#FF3B30', // Apple Red (still for destructive actions like delete)
   inputBackground: '#EFEFF4',
   highlightBackground: '#FEFFD6', // Lighter yellow
   highlightText: '#000000',
-  flagged: '#FF3B30', // Apple Red
-  flaggedIcon: '#FF3B30', // Apple Red
+  checked: '#34C759', // New: Green for checked state (was 'flagged')
+  checkedIcon: '#FFFFFF', // New: White checkmark icon (was 'flaggedIcon')
   notesBackground: '#EFEFF4', // Specific for notes area
 };
 
@@ -28,12 +28,12 @@ export const darkColors = {
   accentGreen: '#30D158', // Apple Green Dark
   border: '#38383A', // Apple System Gray 4 Dark
   placeholder: '#8E8E93',
-  destructive: '#FF453A', // Apple Red Dark
+  destructive: '#FF453A', // Apple Red Dark (still for destructive actions like delete)
   inputBackground: '#3A3A3C',
   highlightBackground: '#B0A000', // Darker yellow for highlight
   highlightText: '#FFFFFF',
-  flagged: '#FF453A', // Apple Red Dark
-  flaggedIcon: '#FF453A',
+  checked: '#30D158', // New: Green for checked state (was 'flagged')
+  checkedIcon: '#FFFFFF', // New: White checkmark icon (was 'flaggedIcon')
   notesBackground: '#2C2C2E', // Specific for notes area in dark mode
 };
 
