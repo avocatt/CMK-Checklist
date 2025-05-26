@@ -1,5 +1,4 @@
 # ⚖️ CMK Kontrol Listesi Uygulaması
-I only have these images
 **Zorunlu Müdafinin (CMK) Görev Takip Listesi**
 
 Avukatların, Ceza Muhakemesi Kanunu (CMK) dosyalarına ilişkin kritik adımları ve soruları etkin bir şekilde yönetmelerine ve takip etmelerine yardımcı olmak için React Native ve Expo ile geliştirilmiş bir mobil uygulamadır. Her dava (görev) kendi kontrol listesine sahiptir.
@@ -30,15 +29,20 @@ Bu uygulama, bir CMK dosyasının aşamalarında hiçbir kritik adımın atlanma
 
 Uygulamayı çalışırken görün:
 
-| Ana Ekran (Dava Listesi)                                      | Ana Kontrol Listesi Arayüzü                    | Koyu Mod Desteği                            | Hukuki Referanslar Pop-up'ı                           |
-| :------------------------------------------------------------ | :---------------------------------------------- | :------------------------------------------ | :---------------------------------------------------- |
-| <img src="docs/images/home-screen.png" alt="Home Screen" width="250"> | <img src="docs/images/main-interface.png" alt="Main Interface" width="250"> | <img src="docs/images/dark-mode.png" alt="Dark Mode" width="250"> | <img src="docs/images/legal-references.png" alt="Legal References" width="250"> |
+### Ana Ekran (Dava Listesi)
+<img src="docs/images/home-screen.png" alt="Ana Ekran" width="300">
 
-<br> <!-- Tablolar arasında daha iyi görsel ayrım için bir satır sonu eklendi -->
+### Ana Kontrol Listesi Arayüzü
+<img src="docs/images/main-interface.png" alt="Ana Kontrol Listesi" width="300">
 
-| Kategori Görünümü ve Genişletme                               | Arama İşlevselliği                                |
-| :------------------------------------------------------------ | :------------------------------------------------ |
-| <img src="docs/images/category-view.png" alt="Category View" width="250"> | <img src="docs/images/search-feature.png" alt="Search Feature" width="250"> |
+### Kategori Görünümü ve Genişletme
+<img src="docs/images/category-view.png" alt="Kategori Görünümü" width="300">
+
+### Koyu Mod Desteği
+<img src="docs/images/dark-mode.png" alt="Koyu Mod" width="300">
+
+### Hukuki Referanslar Pop-up'ı
+<img src="docs/images/legal-references.png" alt="Hukuki Referanslar" width="300">
 
 ---
 
