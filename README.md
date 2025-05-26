@@ -1,7 +1,7 @@
 # ⚖️ CMK Kontrol Listesi Uygulaması
 **Zorunlu Müdafinin (CMK) Görev Takip Listesi**
 
-Avukatların, Ceza Muhakemesi Kanunu (CMK) dosyalarına ilişkin kritik adımları ve soruları etkin bir şekilde yönetmelerine ve takip etmelerine yardımcı olmak için React Native ve Expo ile geliştirilmiş bir mobil uygulamadır. Her dava (görev) kendi kontrol listesine sahiptir.
+Avukatların, CMK dosyalarına ilişkin kritik adımları ve sorunları etkin bir şekilde yönetmelerine ve takip etmelerine yardımcı olmak için React Native ve Expo ile geliştirilmiş bir mobil uygulamadır. Her dava (görev) kendi kontrol listesine sahiptir.
 
 **Avukathakleri.net** (https://www.avukathakleri.net/zorunlu-mudafinin-cmk-kontrol-listesi/) tarafından paylaşılan kontrol listesine dayanmaktadır.
 
@@ -29,20 +29,14 @@ Bu uygulama, bir CMK dosyasının aşamalarında hiçbir kritik adımın atlanma
 
 Uygulamayı çalışırken görün:
 
-### Ana Ekran (Dava Listesi)
-<img src="docs/images/home-screen.png" alt="Ana Ekran" width="300">
+| Ana Ekran (Dava Listesi)                                      | Ana Kontrol Listesi Arayüzü                    |
+| :------------------------------------------------------------ | :---------------------------------------------- |
+| <img src="docs/images/home-screen.png" alt="Ana Ekran" width="300"> | <img src="docs/images/main-interface.png" alt="Ana Kontrol Listesi" width="300"> |
 
-### Ana Kontrol Listesi Arayüzü
-<img src="docs/images/main-interface.png" alt="Ana Kontrol Listesi" width="300">
+| Kategori Görünümü ve Genişletme                               | Hukuki Referanslar Pop-up'ı                           |
+| :------------------------------------------------------------ | :---------------------------------------------------- |
+| <img src="docs/images/category-view.png" alt="Kategori Görünümü" width="300"> | <img src="docs/images/legal-references.png" alt="Hukuki Referanslar" width="300"> |
 
-### Kategori Görünümü ve Genişletme
-<img src="docs/images/category-view.png" alt="Kategori Görünümü" width="300">
-
-### Koyu Mod Desteği
-<img src="docs/images/dark-mode.png" alt="Koyu Mod" width="300">
-
-### Hukuki Referanslar Pop-up'ı
-<img src="docs/images/legal-references.png" alt="Hukuki Referanslar" width="300">
 
 ---
 
@@ -118,18 +112,6 @@ cmk-checklist/
 └── tsconfig.json           # TypeScript yapılandırması
 ```
 *`useChecklist.ts` hook'u, yanıtları ve notları dahil olmak üzere birden çok `CaseChecklist` örneğini yönetmede merkezi bir rol oynar.*
-
----
-
-## 🙏 Teşekkürler
-
-Bu uygulamanın temelini oluşturan kapsamlı CMK kontrol listesini sağladığı için **avukathakleri.net**'e büyük teşekkürler.
-
----
-
-## 🤝 Katkıda Bulunma
-
-Katkılarınız memnuniyetle karşılanır! İyileştirme önerileriniz varsa, bir hata bulursanız veya yeni bir özellik eklemek isterseniz, lütfen bir `issue` açın veya bir `pull request` gönderin.
 
 ---
 
