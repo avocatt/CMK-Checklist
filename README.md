@@ -1,5 +1,5 @@
 # ⚖️ CMK Kontrol Listesi Uygulaması
-
+I only have these images
 **Zorunlu Müdafinin (CMK) Görev Takip Listesi**
 
 Avukatların, Ceza Muhakemesi Kanunu (CMK) dosyalarına ilişkin kritik adımları ve soruları etkin bir şekilde yönetmelerine ve takip etmelerine yardımcı olmak için React Native ve Expo ile geliştirilmiş bir mobil uygulamadır. Her dava (görev) kendi kontrol listesine sahiptir.
@@ -34,7 +34,7 @@ Uygulamayı çalışırken görün:
 | :------------------------------------------------------------ | :---------------------------------------------- | :------------------------------------------ | :---------------------------------------------------- |
 | <img src="docs/images/home-screen.png" alt="Home Screen" width="250"> | <img src="docs/images/main-interface.png" alt="Main Interface" width="250"> | <img src="docs/images/dark-mode.png" alt="Dark Mode" width="250"> | <img src="docs/images/legal-references.png" alt="Legal References" width="250"> |
 
-<br> <!-- Added a line break for better visual separation between tables -->
+<br> <!-- Tablolar arasında daha iyi görsel ayrım için bir satır sonu eklendi -->
 
 | Kategori Görünümü ve Genişletme                               | Arama İşlevselliği                                |
 | :------------------------------------------------------------ | :------------------------------------------------ |
