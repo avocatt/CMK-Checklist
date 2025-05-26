@@ -1,8 +1,8 @@
 # ⚖️ CMK Kontrol Listesi Uygulaması
 
-**Zorunlu Müdafinin Ceza Muhakemesi Kanunu (CMK) Görev Takip Listesi**
+**Zorunlu Müdafinin (CMK) Görev Takip Listesi**
 
-Avukatların, özellikle Türkiye'deki zorunlu müdafilerin, Ceza Muhakemesi Kanunu (CMK) davalarına ilişkin kritik adımları ve soruları etkin bir şekilde yönetmelerine ve takip etmelerine yardımcı olmak için React Native ve Expo ile geliştirilmiş bir mobil uygulamadır. Her dava (görev) kendi kontrol listesine sahiptir.
+Avukatların, Ceza Muhakemesi Kanunu (CMK) dosyalarına ilişkin kritik adımları ve soruları etkin bir şekilde yönetmelerine ve takip etmelerine yardımcı olmak için React Native ve Expo ile geliştirilmiş bir mobil uygulamadır. Her dava (görev) kendi kontrol listesine sahiptir.
 
 **Avukathakleri.net** (https://www.avukathakleri.net/zorunlu-mudafinin-cmk-kontrol-listesi/) tarafından paylaşılan kontrol listesine dayanmaktadır.
 
