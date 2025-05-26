@@ -1,8 +1,3 @@
-Here's the fixed layout for the "Ekran Görüntüleri" section. The problem was that you tried to add two more columns to a 4-column table definition. Markdown tables require a consistent number of columns per row.
-
-The solution is to split the screenshots into two separate tables: one for the four images, and another for the remaining two.
-
-```markdown
 # ⚖️ CMK Kontrol Listesi Uygulaması
 
 **Zorunlu Müdafinin (CMK) Görev Takip Listesi**
@@ -153,4 +148,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## 📧 İletişim
 
 *   https://www.linkedin.com/in/emreterzi/
-```
