@@ -29,13 +29,17 @@ Bu uygulama, bir CMK dosyasının aşamalarında hiçbir kritik adımın atlanma
 
 Uygulamayı çalışırken görün:
 
-| Ana Ekran (Dava Listesi)                                      | Ana Kontrol Listesi Arayüzü                    |
+| Ana Ekran (Dava Listesi)                                      | Yeni CMK Dosyası Ekleme                    |
 | :------------------------------------------------------------ | :---------------------------------------------- |
-| <img src="docs/images/home-screen.png" alt="Ana Ekran" width="300"> | <img src="docs/images/main-interface.png" alt="Ana Kontrol Listesi" width="300"> |
+| <img src="docs/images/homepage.png" alt="Ana Ekran" width="300"> | <img src="docs/images/add-new-cmk.png" alt="Yeni CMK Ekleme" width="300"> |
 
-| Kategori Görünümü ve Genişletme                               | Hukuki Referanslar Pop-up'ı                           |
+| Kontrol Listesi Ekranı                               | Genel Not Ekleme                           |
 | :------------------------------------------------------------ | :---------------------------------------------------- |
-| <img src="docs/images/category-view.png" alt="Kategori Görünümü" width="300"> | <img src="docs/images/legal-references.png" alt="Hukuki Referanslar" width="300"> |
+| <img src="docs/images/checklistscreen.png" alt="Kontrol Listesi" width="300"> | <img src="docs/images/adding-general-notes.png" alt="Genel Not Ekleme" width="300"> |
+
+| Madde Bazında Not Ekleme                               | Hukuki Referans Modal'ı                           |
+| :------------------------------------------------------------ | :---------------------------------------------------- |
+| <img src="docs/images/adding-notes-per-item.png" alt="Madde Bazında Not" width="300"> | <img src="docs/images/legal-reference-modal.png" alt="Hukuki Referans Modal" width="300"> |
 
 
 ---
