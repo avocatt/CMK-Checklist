@@ -11,6 +11,7 @@ import {
   Platform,
   SafeAreaView,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useChecklist } from '../hooks/useChecklist';
 import { useTheme } from '../hooks/useTheme';
 import { CaseChecklist } from '../types';
@@ -41,6 +42,7 @@ export default function HomeScreen() {
   const [newCaseName, setNewCaseName] = useState('');
   const [editingChecklist, setEditingChecklist] = useState<CaseChecklist | null>(null);
   const [renamingName, setRenamingName] = useState('');
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   // Memoize the sorted list
   const sortedChecklists = useMemo(() => {
@@ -73,12 +75,14 @@ export default function HomeScreen() {
   const handleCreateNew = () => {
     setNewCaseName(''); // Reset name for new case
     setEditingChecklist(null); // Ensure not in rename mode
+    setIsInputFocused(false); // Reset input focus state
     setModalVisible(true);
   };
   
   const handleRename = (checklist: CaseChecklist) => {
     setEditingChecklist(checklist);
     setRenamingName(checklist.name);
+    setIsInputFocused(false); // Reset input focus state
     setModalVisible(true);
   };
 
@@ -136,10 +140,10 @@ export default function HomeScreen() {
       </View>
       <View style={styles.itemActionsContainer}>
         <TouchableOpacity onPress={() => handleRename(item)} style={styles.actionButton}>
-            <Text style={[styles.actionIcon, {color: colors.accent}]}>✎</Text>
+            <Ionicons name="pencil-outline" size={20} color={colors.accent} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleDelete(item.id, item.name)} style={styles.actionButton}>
-            <Text style={[styles.actionIcon, {color: colors.destructive}]}>🗑</Text>
+            <Ionicons name="trash-outline" size={20} color={colors.destructive} />
         </TouchableOpacity>
       </View>
     </TouchableOpacity>
@@ -201,13 +205,15 @@ export default function HomeScreen() {
                 { 
                   backgroundColor: colors.inputBackground, 
                   color: colors.text,
-                  borderColor: colors.border,
+                  borderColor: isInputFocused ? colors.accent : colors.border, // Dynamic border color
                 }
               ]}
               placeholder="Görev Adı (Örn: Ahmet Yılmaz Dosyası)"
               placeholderTextColor={colors.placeholder}
               value={editingChecklist ? renamingName : newCaseName}
               onChangeText={editingChecklist ? setRenamingName : setNewCaseName}
+              onFocus={() => setIsInputFocused(true)} // Set focus state
+              onBlur={() => setIsInputFocused(false)} // Clear focus state
             />
             <View style={styles.modalButtonContainer}>
               <TouchableOpacity
@@ -215,6 +221,7 @@ export default function HomeScreen() {
                 onPress={() => {
                   setModalVisible(false);
                   setEditingChecklist(null);
+                  setIsInputFocused(false); // Reset focus on close
                 }}
               >
                 <Text style={[styles.modalButtonText, {color: 'white'}]}>İptal</Text>
@@ -246,19 +253,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#FFFFFF', // Default light color, overridden by inline style
-    padding: 15,
-    marginVertical: 6,
+    padding: 18, // Increased padding
+    marginVertical: 8, // Increased vertical spacing
     marginHorizontal: 12,
-    borderRadius: 10,
+    borderRadius: 12, // Slightly larger border radius
     ...Platform.select({
       ios: {
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
+        shadowOffset: { width: 0, height: 2 }, // More prominent shadow offset
+        shadowOpacity: 0.15, // Increased shadow opacity
+        shadowRadius: 5, // Increased shadow radius
       },
       android: {
-        elevation: 2,
+        elevation: 4, // Increased elevation for Android
       },
     }),
   },
@@ -269,15 +276,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   itemText: {
-    fontSize: 17,
-    fontWeight: '500',
+    fontSize: 18, // Increased font size
+    fontWeight: '600', // Semibold
     color: '#000000', // Default light color, overridden by inline style
   },
   darkItemText: {
     color: '#FFFFFF', // Will be overridden by inline style
   },
   itemDate: {
-    fontSize: 13,
+    fontSize: 14, // Increased font size
     color: '#8A8A8E', // Default light color, overridden by inline style
     marginTop: 4,
   },
@@ -292,9 +299,6 @@ const styles = StyleSheet.create({
     padding: 8,
     marginLeft: 8,
   },
-  actionIcon: {
-    fontSize: 20,
-  },
   fab: {
     position: 'absolute',
     right: 20,
@@ -307,12 +311,12 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.3,
-        shadowRadius: 3,
+        shadowOffset: { width: 0, height: 4 }, // More prominent shadow offset
+        shadowOpacity: 0.4, // Increased shadow opacity
+        shadowRadius: 6, // Increased shadow radius
       },
       android: {
-        elevation: 6,
+        elevation: 8, // Increased elevation for Android
       },
     }),
   },
@@ -345,8 +349,19 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     width: '90%',
-    padding: 20,
-    borderRadius: 10,
+    padding: 24, // Increased padding
+    borderRadius: 12, // Consistent border radius with cards
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.15,
+        shadowRadius: 6,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
   },
   modalTitle: {
     fontSize: 20,
