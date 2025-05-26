@@ -1,173 +1,146 @@
-# ⚖️ CMK Checklist App
+# ⚖️ CMK Kontrol Listesi Uygulaması
 
-**Zorunlu Müdafinin Ceza Muhakemesi Kanunu (CMK) Kontrol Listesi**
+**Zorunlu Müdafinin Ceza Muhakemesi Kanunu (CMK) Görev Takip Listesi**
 
-A mobile application built with React Native and Expo designed to help lawyers, specifically mandatory defenders in Turkey, effectively manage and track crucial steps and questions related to Criminal Procedure Law (CMK) cases.
+Avukatların, özellikle Türkiye'deki zorunlu müdafilerin, Ceza Muhakemesi Kanunu (CMK) davalarına ilişkin kritik adımları ve soruları etkin bir şekilde yönetmelerine ve takip etmelerine yardımcı olmak için React Native ve Expo ile geliştirilmiş bir mobil uygulamadır. Her dava (görev) kendi kontrol listesine sahiptir.
 
-Based on the valuable checklist created by **avukathakleri.net** (https://www.avukathaklari.net/zorunlu-mudafinin-cmk-kontrol-listesi/).
-
----
-
-## ✨ Features
-
-This app provides a structured and persistent way to ensure no critical step is missed during the initial stages of a criminal defense case.
-
-**Core Functionality:**
-
-*   **Extensive Checklist:** Navigate through 141 detailed checklist items organized into 6 logical categories covering key aspects from pre-interview preparation to specific procedural steps (like Search, Detention, Interrogation, Seri Muhakeme, etc.).
-*   **Flexible Responses:** Answer Yes/No questions with a simple toggle and provide detailed notes or responses using text input fields.
-*   **Automatic Progress Saving:** All your answers and notes are automatically saved as you input them, ensuring you never lose your progress.
-*   **Persistent Data:** Your completed and ongoing checklists are stored locally on your device, allowing you to pick up exactly where you left off, even after closing the app.
-
-**User Interface & Experience:**
-
-*   **Clean & Intuitive Design:** A minimalist interface following modern mobile design principles for ease of use, especially in potentially stressful situations.
-*   **Dark Mode Support:** Reduce eye strain and improve readability in low-light environments. Toggle between light and dark themes seamlessly.
-*   **Expandable Categories:** Easily collapse or expand checklist categories to focus on relevant sections.
-*   **Bulk Toggle:** Expand or collapse all categories at once for quick overview or detailed browsing.
-
-**Search & Navigation:**
-
-*   **Real-time Search:** Quickly find specific questions or topics within the checklist by typing keywords.
-*   **Text Highlighting:** Search results are visually highlighted directly in the question text.
-*   **Automatic Expansion:** Categories containing search matches are automatically expanded for immediate visibility.
-
-**Legal Terms Integration:**
-
-*   **Interactive Legal References:** Tap on mentions of key Turkish legal codes and articles (like TCK, CMK, PVSK with specific article numbers) embedded within the questions.
-*   **Quick Reference Popups:** Get instant access to detailed explanations or the relevant article text in a convenient modal popup without leaving the checklist.
-
-**Data Management:**
-
-*   **Full Reset Functionality:** Easily clear all answers and start fresh for a new case with a confirmation prompt.
-*   **Local Storage:** Utilizes `AsyncStorage` for reliable and simple local data persistence.
+**Avukathakleri.net** (https://www.avukathakleri.net/zorunlu-mudafinin-cmk-kontrol-listesi/) tarafından paylaşılan kontrol listesine dayanmaktadır.
 
 ---
 
-## 📸 Screenshots
+## ✨ Özellikler
 
-See the app in action:
+Bu uygulama, bir CMK dosyasının aşamalarında hiçbir kritik adımın atlanmamasını sağlamak için yardımcı bir yol sunar; aynı anda birden fazla dosyanın yönetilmesine olanak tanır.
 
-| Main Interface                                  | Category View with Expansion                        | Search Functionality                                |
-| :---------------------------------------------- | :-------------------------------------------------- | :-------------------------------------------------- |
-| <img src="docs/images/main-interface.png" alt="Main Interface" width="250"> | <img src="docs/images/category-view.png" alt="Category View" width="250"> | <img src="docs/images/search-feature.png" alt="Search Feature" width="250"> |
+**Mevzuat Entegrasyonu:**
 
-| Dark Mode Support                           | Legal References Popup                                |
-| :------------------------------------------ | :---------------------------------------------------- |
-| <img src="docs/images/dark-mode.png" alt="Dark Mode" width="250"> | <img src="docs/images/legal-references.png" alt="Legal References" width="250"> |
+*   **Etkileşimli Hukuki Referanslar:** Sorular içindeki Türk yasa maddelerinin (TCK, CMK, PVSK) üzerine dokunun.
+*   **Hızlı Referans Pop-up'ları:** Bir modal pop-up'ta ilgili madde metnine anında erişim sağlayın.
+
+**Veri Yönetimi:**
+
+*   **Sıfırlama İşlevi:** Belirli bir dava için tüm yanıtları kolayca temizleyin.
+*   **Dava Silme:** Tüm dava kontrol listelerini kaldırın.
+*   **Dava Yeniden Adlandırma:** Bir davanın adını güncelleyin.
+*   **Yerel Depolama:** Güvenilir yerel veri kalıcılığı için `AsyncStorage` kullanır.
 
 ---
 
-## 🚀 Getting Started
+## 📸 Ekran Görüntüleri
 
-Follow these steps to get the application up and running on your local machine for development or testing purposes.
+Uygulamayı çalışırken görün:
 
-**Prerequisites:**
+| Ana Ekran (Dava Listesi)                                      | Ana Kontrol Listesi Arayüzü                    | Koyu Mod Desteği                            | Hukuki Referanslar Pop-up'ı                           |
+| :------------------------------------------------------------ | :---------------------------------------------- | :------------------------------------------ | :---------------------------------------------------- |
+| <img src="docs/images/home-screen.png" alt="Home Screen" width="250"> | <img src="docs/images/main-interface.png" alt="Main Interface" width="250"> | <img src="docs/images/dark-mode.png" alt="Dark Mode" width="250"> | <img src="docs/images/legal-references.png" alt="Legal References" width="250"> |
+| Kategori Görünümü ve Genişletme                               | Arama İşlevselliği                                |
+| <img src="docs/images/category-view.png" alt="Category View" width="250"> | <img src="docs/images/search-feature.png" alt="Search Feature" width="250"> |
 
-*   [Node.js](https://nodejs.org/en/) (v14 or higher recommended)
-*   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
-*   [Expo Go app](https://expo.dev/client) installed on your iOS or Android device
+---
 
-**Installation:**
+## 🚀 Başlarken
 
-1.  Clone the repository:
+Uygulamayı yerel makinenizde geliştirme veya test amacıyla çalıştırmak için aşağıdaki adımları izleyin.
+
+**Ön Koşullar:**
+
+*   [Node.js](https://nodejs.org/en/) (v14 veya üzeri önerilir)
+*   [npm](https://www.npmjs.com/) veya [Yarn](https://yarnpkg.com/)
+*   iOS veya Android cihazınızda yüklü [Expo Go uygulaması](https://expo.dev/client)
+
+**Kurulum:**
+
+1.  Depoyu klonlayın:
     ```bash
-    git clone https://github.com/YOUR_GITHUB_USERNAME/cmk-checklist.git # Replace with your repo URL
+    git clone https://github.com/emreterzi/cmk-checklist.git # Eğer farklıysa kendi repo URL'nizle değiştirin
     cd cmk-checklist
     ```
 
-2.  Install dependencies:
+2.  Bağımlılıkları yükleyin:
     ```bash
     npm install
-    # or
+    # veya
     # yarn install
     ```
 
-3.  Start the Expo development server:
+3.  Expo geliştirme sunucusunu başlatın:
     ```bash
     npx expo start
-    # or
+    # veya
     # yarn start
     ```
 
-4.  Open the Expo Go app on your mobile device and scan the QR code displayed in the terminal or browser window that opens. The app should load on your device.
+4.  Mobil cihazınızdaki Expo Go uygulamasını açın ve terminalde veya açılan tarayıcı penceresinde gösterilen QR kodu tarayın. Uygulama cihazınıza yüklenecektir.
 
 ---
 
-## 🏗️ Project Structure
+## 🏗️ Proje Yapısı
 
-The project follows a standard React Native/Expo structure:
+Proje standart bir React Native/Expo yapısını takip eder:
 
 ```
 cmk-checklist/
-├── assets/                 # App icons and splash screen
-├── docs/                   # Documentation, including screenshots
+├── assets/                 # Uygulama ikonları ve açılış ekranı
+├── docs/                   # Ekran görüntüleri dahil dokümantasyon
+├── scripts/                # Veri işleme için Python betikleri
+│   ├── law_parser.py       # Hukuk HTML dosyalarını ayrıştırma betiği
+│   ├── scrape_laws.py      # Hukuk içeriğini kazıma betiği
+│   └── README.md           # Betikler için dokümantasyon
 ├── src/
-│   ├── data/               # Raw data for checklist items and legal references
-│   │   ├── checklist.ts
-│   │   └── legalReferences.ts
-│   ├── hooks/              # Custom React hooks (e.g., for data fetching/persistence)
-│   │   └── useChecklist.ts # Note: Current implementation uses useState/useEffect directly in screen
-│   ├── screens/            # Main application screens
-│   │   └── ChecklistScreen.tsx
-│   └── types/              # TypeScript type definitions
-│       └── index.ts
-├── .gitignore              # Files ignored by Git
-├── app.json                # Expo configuration file
-├── App.tsx                 # Root component, sets up navigation
-├── index.ts                # Entry point for Expo
-├── package.json            # Project dependencies and scripts
-├── README.md               # This file
-└── tsconfig.json           # TypeScript configuration
+│   ├── data/               # Kontrol listesi öğeleri ve yasal referanslar için ham veri
+│   │   ├── checklist.json      # Ana kontrol listesi yapısı
+│   │   ├── index.ts            # Diğer dosyalardaki verileri dışa aktarır
+│   │   ├── legalReferences.json    # Ayrıştırılmış yasal madde içeriği
+│   │   ├── legalReferences_updated.json # Güncellenmiş yasal referanslar
+│   │   └── laws_content/       # Hukuk içeriğinin HTML dosyaları
+│   ├── hooks/              # Özel React hook'ları
+│   │   └── useChecklist.ts # Tüm kontrol listesi verilerini ve işlemlerini yönetir
+│   ├── screens/            # Ana uygulama ekranları
+│   │   ├── HomeScreen.tsx      # Birden fazla kontrol listesini (dava) yönetme ekranı
+│   │   └── ChecklistScreen.tsx # Bireysel kontrol listesi etkileşimi için ekran
+│   └── types/              # TypeScript tür tanımları
+│       └── index.ts            # Uygulamanın temel veri yapılarını tanımlar
+├── .gitignore              # Git tarafından yok sayılan dosyalar
+├── app.json                # Expo yapılandırma dosyası
+├── App.tsx                 # Kök bileşen, navigasyonu kurar
+├── index.ts                # Expo için giriş noktası
+├── package.json            # Proje bağımlılıkları ve betikleri
+├── README.md               # Bu dosya
+├── requirements.txt        # Python bağımlılıkları
+└── tsconfig.json           # TypeScript yapılandırması
 ```
-
-*Note: The `useChecklist.ts` hook exists but is not currently utilized by `ChecklistScreen.tsx`. State management (answers, notes) is handled directly within the screen component.*
-
----
-
-## 🗺️ Roadmap
-
-Ideas for future enhancements and features:
-
-*   [ ] Implement a Floating Action Button (FAB) for quick navigation between categories.
-*   [ ] Explore adding swipe gestures for certain interactions (e.g., marking as done).
-*   [ ] Refactor state management, potentially utilizing the `useChecklist` hook or a more centralized approach.
-*   [ ] Improve the legal reference lookup to handle variations (e.g., "TCK m. 73").
-*   [ ] Add export functionality (e.g., export completed checklist as PDF/text).
-*   [ ] Implement progress indicators (e.g., percentage complete per category).
+*`useChecklist.ts` hook'u, yanıtları ve notları dahil olmak üzere birden çok `CaseChecklist` örneğini yönetmede merkezi bir rol oynar.*
 
 ---
 
-## 🙏 Acknowledgements
+## 🙏 Teşekkürler
 
-A huge thank you to **avukathakleri.net** for providing the comprehensive CMK checklist that serves as the foundation for this application.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! If you have suggestions for improvements, find a bug, or want to add a new feature, please open an issue or submit a pull request.
+Bu uygulamanın temelini oluşturan kapsamlı CMK kontrol listesini sağladığı için **avukathakleri.net**'e büyük teşekkürler.
 
 ---
 
-## 📄 License
+## 🤝 Katkıda Bulunma
 
-Distributed under the MIT License. See `LICENSE` file (or the text below) for more information.
+Katkılarınız memnuniyetle karşılanır! İyileştirme önerileriniz varsa, bir hata bulursanız veya yeni bir özellik eklemek isterseniz, lütfen bir `issue` açın veya bir `pull request` gönderin.
+
+---
+
+## 📄 Lisans
+
+MIT Lisansı altında dağıtılmıştır. Daha fazla bilgi için `LICENSE` dosyasına (veya aşağıdaki metne) bakın.
 
 ```
 MIT License
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-This license notice must be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
 ---
 
-## 📧 Contact
-
-Feel free to reach out via:
+## 📧 İletişim
 
 *   https://www.linkedin.com/in/emreterzi/

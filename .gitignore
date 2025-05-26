@@ -59,3 +59,6 @@ yarn-error.log
 .expo/
 dist/
 web-build/
+
+# Data
+/src/data/laws_content

@@ -1,0 +1,1076 @@
+[
+  {
+    "id": "P1",
+    "name": "I. MÜDAFİ OLARAK GÖREVLENDİRİLME",
+    "subCategories": [
+      {
+        "id": "C1",
+        "name": "Kolluk Öncesi Hazırlık",
+        "items": [
+          {
+            "id": "Q1",
+            "category": "Kolluk Öncesi Hazırlık",
+            "question": "Şüpheliye isnat edilen suç nedir?",
+            "type": "text"
+          },
+          {
+            "id": "Q2",
+            "category": "Kolluk Öncesi Hazırlık",
+            "question": "Şüpheliye yüklenen suçun şikayete bağlı olup olmadığını (TCK 73), önödeme (TCK 75), uzlaştırma (CMK 253), kamu davasının açılmasının ertelenmesi (CMK 171/2), seri muhakeme usulü (CMK 250) veya etkin pişmanlığa tabi olup olmadığını araştırdınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q3",
+            "category": "Kolluk Öncesi Hazırlık",
+            "question": "Sizinle irtibata geçen kimseden bu suçla ilgili olarak ham bilgi aldınız mı?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C2",
+        "name": "Kolluk Birimine Giriş",
+        "items": [
+          {
+            "id": "Q4",
+            "category": "Kolluk Birimine Giriş",
+            "question": "Avukat kimliğinizi hazır ederek, girişlerde kim olduğunuzu ve hangi nedenle kolluk biriminde olduğunuzu açıkladınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q5",
+            "category": "Kolluk Birimine Giriş",
+            "question": "Suçun işlendiği yerin soruşturmayı yürüten kolluk biriminin yetki alanına girip girmediğini kontrol ettiniz mi? (CMK 12)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q6",
+            "category": "Kolluk Birimine Giriş",
+            "question": "Olaya müdahale eden kolluk memuru yer ve görev bakımından yetkili mi?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C3",
+        "name": "Kollukla Görüşme",
+        "items": [
+          {
+            "id": "Q7",
+            "category": "Kollukla Görüşme",
+            "question": "Kolluk olayı nasıl ve ne zaman öğrenmiştir? (CMK 158)",
+            "type": "text"
+          },
+          {
+            "id": "Q8",
+            "category": "Kollukla Görüşme",
+            "question": "Her adli kolluk işlemi için Cumhuriyet savcısından ayrı talimat alınmış mıdır? (CMK 161/3)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q9",
+            "category": "Kollukla Görüşme",
+            "question": "Cumhuriyet savcısı ile yapılan görüşme tutanağının içeriği nedir, belirlediniz mi? (CMK 169)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q10",
+            "category": "Kollukla Görüşme",
+            "question": "Kolluk yer gösterme (CMK 85) yapmış mıdır?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q11",
+            "category": "Kollukla Görüşme",
+            "question": "Olay yeri incelemesi yapılmışsa (PVSK EK 6) neler bulunmuş ve bu bulgular hakkında neler yapılmıştır, belirleyiniz.",
+            "type": "text"
+          },
+          {
+            "id": "Q12",
+            "category": "Kollukla Görüşme",
+            "question": "Şüpheliye siz gelmeden önce kolluk görevlisine bilgi verip vermediğini sordunuz mu? (CMK 147)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q13",
+            "category": "Kollukla Görüşme",
+            "question": "Cevap evet ise, görüşmeye ilişkin tutanak tutulmuş olup olmadığını sordunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q14",
+            "category": "Kollukla Görüşme",
+            "question": "Olayın tarafları doğru tespit edilmiş midir? Şüpheli ve mağdur gerçekten bu konumda mıdır?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q15",
+            "category": "Kollukla Görüşme",
+            "question": "Kolluk olay yerindeki kişilerden bilgi almış mıdır? İşlenen suç hakkında bilgi alınan kimseler objektif midir? (Bu kişilerin daha sonra tanıklığına itiraz etmek açısından bu incelemeye önem verin.)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q16",
+            "category": "Kollukla Görüşme",
+            "question": "Soruşturmayı yürüten kolluk görevlisine, suçla ilgili olarak, o aşamaya kadar hangi araştırma işlemlerinin yapıldığını ve arama veya benzeri başka hangi işlemler (CMK 161) yapmayı planladığını sordunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q17",
+            "category": "Kollukla Görüşme",
+            "question": "Soruşturma işlemleri konusunda yaptığınız görüşme hakkında notlar aldınız mı?",
+            "type": "yesNo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "P2",
+    "name": "II. ARAMANIN HUKUKA UYGUNLUĞUNUN DENETLENMESİ",
+    "subCategories": [
+      {
+        "id": "C4",
+        "name": "Adli Arama",
+        "items": [
+          {
+            "id": "Q18",
+            "category": "Adli Arama",
+            "question": "Olayın işlendiği yer kamuya açık bir yer mi, yoksa özel mülkiyete ait bir alan mıdır, tespit ettiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q19",
+            "category": "Adli Arama",
+            "question": "Özel bir mülkiyete tabi ise, hakimden arama kararı veya Cumhuriyet savcısından arama emri alınmış mıdır? (CMK 119/1)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q20",
+            "category": "Adli Arama",
+            "question": "Arama kararı alınmadan önce kolluk tarafından makul şüpheyi destekleyen \"olgu\" elde edilerek, bu olgu hakime sunulmuş mudur?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q21",
+            "category": "Adli Arama",
+            "question": "Arama kararında; aramanın nedenini oluşturan fiil (makul şüphe), aranılacak kişi veya eşya, aramanın yapılacağı adres, arama kararının geçerli olduğu zaman süresi açıkça yazılmış mıdır? Somut olayda alınan arama kararı önleme araması kararı (PVSK 9) olup, adli arama için kullanılmış ise hukuka aykırı delil elde edildiği konusunda Cumhuriyet savcısına duyuru yaptınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q22",
+            "category": "Adli Arama",
+            "question": "Arama sırasında Cumhuriyet savcısı hazır bulunmuş mudur? Cevap hayır ise, ihtiyar heyetinden veya komşudan iki kişi hazır bulundurulmuş mudur?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q23",
+            "category": "Adli Arama",
+            "question": "Arama sırasında aranılacak yerin sahibi veya zilyedi hazır bulundurulmuş mudur? Cevap hayır ise, temsilcisi veya ayırt etme gücüne sahip hısımlarından biri veya kendisiyle birlikte oturmakta olan bir kişi veya komşusu hazır bulundurulmuş dur?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q24",
+            "category": "Adli Arama",
+            "question": "Arama şüpheli dışındaki bir kişinin evinde yapılıyorsa (CMK 117/1), zilyede ve o bulunmazsa yerine çağırılan kişiye aramaya başlamadan önce aramanın amacı hakkında bilgi verilmiş midir? (CMK 120/2)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q25",
+            "category": "Adli Arama",
+            "question": "Aramada kişinin avukatının hazır bulunmasına engel olunmuş mudur? (CMK 120/3)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q26",
+            "category": "Adli Arama",
+            "question": "Aramada ele geçen eşyaya el konulmuşsa, suçtan zarar gören mağdura gecikmeksizin bilgi verilmiş midir?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C5",
+        "name": "Belge İnceleme",
+        "items": [
+          {
+            "id": "Q27",
+            "category": "Belge İnceleme",
+            "question": "Arama sırasında, hakkında arama işlemi uygulanan kimsenin belge ve kağıtları kolluk görevlisi tarafından incelenmiş midir? (CMK 122) Cevap evet ise, hukuka aykırı delil elde edildiği yolunda duyuruda bulundunuz mu? (CMK 217/1)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q28",
+            "category": "Belge İnceleme",
+            "question": "Aramada ortaya çıkan ve (CMK 45) ve (CMK 46) maddelere göre tanıklıktan çekinebilecek kişiler nezdinde bulunan mektup ve belgeler bakımından elkoyma yasağına uygun davranılmış mıdır? (CMK 126)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q29",
+            "category": "Belge İnceleme",
+            "question": "Arama sırasında ele geçirilen belge ve kağıtların zilyedine kendi mührünü koyma veya imzasını atma olanağı sağlanmış mıdır? (CMK 122/2)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q30",
+            "category": "Belge İnceleme",
+            "question": "Aramada ele geçirilen belge ve kağıtlar Cumhuriyet savcısı ve hakim tarafından incelenmiş midir? (CMK 122/1) Cevap evet ise, soruşturma konusun suça ilişkin olmadığı anlaşıldığında ilgilisine geri verilmiş midir? (CMK 122/2)",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C6",
+        "name": "Arama Tutanağı",
+        "items": [
+          {
+            "id": "Q31",
+            "category": "Arama Tutanağı",
+            "question": "Arama sırasında görüntü kaydı alınmış mıdır?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q32",
+            "category": "Arama Tutanağı",
+            "question": "Arama sonrası usulüne uygun tutanaklar tutulmuş (CMK 121/1) ve elkonulan eşyanın ilgilisine bunun mülkiyetine ilişkin görüş ve iddialarına yer verilmiş midir?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C7",
+        "name": "Postada Elkoyma",
+        "items": [
+          {
+            "id": "Q33",
+            "category": "Postada Elkoyma",
+            "question": "Postada elkoyma işlemi yapılmış mıdır? Cevap evet ise, bu gönderilerin maddi gerçeğin ortaya çıkarılması için soruşturma ve kovuşturmada adliyenin eli altında olmasının zorunlu olduğuna ve gecikmede sakınca bulunduğuna ilişkin hakimin veya Cumhuriyet savcısının kararında gerekçe açıklanmış mıdır? (CMK 129/1)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q34",
+            "category": "Postada Elkoyma",
+            "question": "Hakim veya Cumhuriyet savcısı kararı ile postada elkoyma işlemini gerçekleştiren kolluk memurlarının gönderilerin içinde bulunduğu zarfları veya paketleri kendiliklerinden açmadıklarını belirlediniz mi? (CMK 129/2) Zarf ve paketlerin açılmasına ilişkin Cumhuriyet savcısının talimatı var mı? (CMK 129/3)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q35",
+            "category": "Postada Elkoyma",
+            "question": "(TCK 174) ve (TCK 188) ile (6136 SK 12), (6136 SK 13) ve (2863 SK 67) ve (2863 SK 68) maddelerde tanımlanan suçlarla ilgili zarf ve paketleri kolluk memurları açabilir. Ancak açmadan önce Cumhuriyet savcısının bu konuda kendilerine talimat vermiş olması gerekir. Dosyayı inceleyerek, bu talimatın açma işlemi öncesinde alındığını tespit ettiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q36",
+            "category": "Postada Elkoyma",
+            "question": "Postada elkoyma işlemi yapıldığının ilgilisine bildirilmesi gerekir (CMK 129/4) Bildirim yapılmamışsa, soruşturmanın amacına zarar verme olasılığının hangi olguya dayandırıldığı, bildirim yapmama kararına yazılmış mı? Bu konuda karar veya kararın gerekçesi yoksa, hukuka aykırı delil elde edildiği konusunda Cumhuriyet savcısına bildirimde bulundunuz mu?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C8",
+        "name": "Avukat Bürosu",
+        "items": [
+          {
+            "id": "Q37",
+            "category": "Avukat Bürosu",
+            "question": "Avukat bürosunda arama yapılmış mıdır? (CMK 130/1) Cevap evet ise, aramada Cumhuriyet savcısı ve Barı başkanı veya onu temsil eden bir avukat hazır bulundurulmuş mudur?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q38",
+            "category": "Avukat Bürosu",
+            "question": "Avukat bürosunda yapılan aramada elkonulan eşyanın avukat ile müvekkil arasındaki mesleki ilişkiye ait olduğu öne sürülerek karşı gelinmiş midir? Cevap evet ise, bu eşya paketlenerek mühürlenmiş ve gereken kararı vermesi için sulh ceza hakimine verilmiş midir? Hakim kararını 24 saat içinde vermiş midir? (CMK 130/3)",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C9",
+        "name": "Elkoyma",
+        "items": [
+          {
+            "id": "Q39",
+            "category": "Elkoyma",
+            "question": "Elkoyma işlemi hakim kararı üzerine veya gecikmesinde sakınca olan hallerde Cumhuriyet savcısının emri ile yapılabilir. Cumhuriyet savcısına ulaşılamayan hallerde kolluk amirinin yazılı emri ile elkoyma işlemi gerçekleştirilebilir (CMK 127/1) Elkoyma işlemi hakim kararı ile mi yapılmıştır?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q40",
+            "category": "Elkoyma",
+            "question": "Delil olabilecek ve ispat aracı olarak yararlı görülen eşya veya müsadere konusu olabilen eşyayı yanında bulunduran kişi, kolluk görevlisinin istemi üzerine bunu rızasıyla teslim ederse, muhafaza altına alma işlemi uygulanır (CMK 123/1) ve hakim kararı aranmaz (CMK 127/1) İlgili kişi eşyayı rızasıyla mı teslim etmiştir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q41",
+            "category": "Elkoyma",
+            "question": "Elkoyma işlemi hakim kararı olmaksızın da yapılabilir, ancak bu işlemin 24 saat içinde hakim onayına sunulmuş ve kararın elkoymadan itibaren 48 saat içinde verilmiş olması gerekir (CMK 127/3) Somut olaydaki elkoyma işlemi hakim kararına dayanmıyorsa, onaya sunulmuş ve karar alınmış mıdır? Cevap hayır ise, hukuka aykırı delil elde edildiği konusunda Cumhuriyet savcısına bildirimde bulundunuz mu?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C10",
+        "name": "Bilgisayar Arama",
+        "items": [
+          {
+            "id": "Q42",
+            "category": "Bilgisayar Arama",
+            "question": "Bilgisayarda arama yapılmış mıdır? (CMK 134) Cevap evet ise, arama öncesinde hakim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının kararı var mıdır? Cevap evet ise, kararda somut delillere dayanan kuvvetli şüphe sebepleri açıklanmış ve başka surette delil elde etme imkanının bulunmadığı olgulara dayanılarak açıklanmış mıdır? (CMK 134/1) Cevap hayır ise, hukuka aykırı delil elde edildiği konusunda Cumhuriyet savcısına bildirimde bulundunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q43",
+            "category": "Bilgisayar Arama",
+            "question": "Bilgisayardaki verilere elkoyma işlemi sırasında sistemdeki tüm verilerin yedeklemesinin yapılması gerekir (CMK 134/3) Yedekleme yapılmış ve yedekten alınan kopya şüpheliye verilmiş midir? (CMK 134/4) Cevap hayır ise, hukuka aykırı delil elde edildiği konusunda Cumhuriyet savcısına bildirimde bulundunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q44",
+            "category": "Bilgisayar Arama",
+            "question": "Bilgisayara elkoymak mülkiyet hakkının kısıtlanması niteliğinde olduğu için, sadece şifrenin çözülememesi nedeni ile girilememesi veya gizlenmiş olan bilgilere ulaşılamaması ya da yedekleme ve kopyalama işlemlerinin uzun süreceği hallerde kabul edilmiştir (CMK 134/2) Somut olayda bilgisayara elkonulmuşsa, şifre sorunu yaşanmış mıdır? Cevap hayır ise, hukuka aykırı delil elde edildiği konusunda Cumhuriyet savcısına bildirimde bulundunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q45",
+            "category": "Bilgisayar Arama",
+            "question": "Sistemdeki verilerin tamamının veya bir kısmının kopyası alınarak bilgisayara elkonulmayabilir (CMK 134/5) Somut olayda böyle bir olanak var mıydı? Cevap hayır ise, hukuka aykırı delil elde edildiği konusunda Cumhuriyet savcısına bildirimde bulundunuz mu?",
+            "type": "yesNo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "P3",
+    "name": "III. YAKALAMA VE GÖZALTI İŞLEMLERİNİN DENETLENMESİ",
+    "subCategories": [
+      {
+        "id": "C11",
+        "name": "Yakalama İşlemi",
+        "items": [
+          {
+            "id": "Q46",
+            "category": "Yakalama İşlemi",
+            "question": "Yakalama işlemi, suçüstü haline mi yapılmıştır? (CMK 90/1)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q47",
+            "category": "Yakalama İşlemi",
+            "question": "Tutuklama kararı vermenin koşulları oluştuğu için kolluk tarafından yakalama re'sen mi yapılmıştır? (CMK 90/2)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q48",
+            "category": "Yakalama İşlemi",
+            "question": "Cevabınız evet ise, yakalama yetkisinin doğabilmesi için \"somut delil\" var mıdır? Delil varsa, nedir?",
+            "type": "text"
+          },
+          {
+            "id": "Q49",
+            "category": "Yakalama İşlemi",
+            "question": "Şüpheli yakalama emri (CMK 98/1) üzerine mi yakalanmıştır? Cevap evet ise, yakalama emri verilmeden önce, gelmesi için şüpheliye çağrı yapılmış mıdır? Yapılmamışsa, çağrı yapılamayacak bir durum söz konusu mudur? Cevap hayır ise, yakalamanın hukuka aykırı olduğu konusunda sulh ceza hakimliğine (CMK 91/5) başvurusu yaptınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q50",
+            "category": "Yakalama İşlemi",
+            "question": "Yakalama (CMK 91/4) uyarınca mı yapılmıştır? Cevabınız evet ise, somut olay suçüstü müdür; mülki amirin görevlendirdiği kolluk amiri gözaltı kararı vermiş ve Cumhuriyet savcısına bilgi vermiş midir? Şüpheli yasal süresi içinde hakim önüne çıkarılmış mıdır? Cevaplarınız hayır ise, yakalamanın hukuka aykırı olduğu konusunda sulh ceza hakimliğine (CMK 91/5) başvurusu yaptınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q51",
+            "category": "Yakalama İşlemi",
+            "question": "Yakalamada üst araması yapılmış (CMK 90/4), zor kullanılmış (PVSK 16), kelepçe takılmış mıdır? Kelepçe takmanın koşulları oluşmuş mudur? (CMK 93) Kolluk tarafından kurallara aykırılık yapıldığını belirlerseniz, somut olguları belirterek Kolluk Gözetim Komisyonuna ihbarda bulundunuz mu? (6713 SK 7/2)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q52",
+            "category": "Yakalama İşlemi",
+            "question": "Kolluk Gözetim Komisyonuna yaptığınız ihbar konusunda açılan disiplin veya ceza soruşturması hakkında en az iki ayda bir size bilgi verilmesi mecburiyeti vardır (6713 SK 8/4) Yasal koşullara uygun olarak bilgi verildi mi?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C12",
+        "name": "Nezarethane Defteri",
+        "items": [
+          {
+            "id": "Q53",
+            "category": "Nezarethane Defteri",
+            "question": "Nezarethane defterini inceleyerek şüphelinin hangi suçlamayla ve ne koşullar altında ve nasıl yakalandığını öğrendiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q54",
+            "category": "Nezarethane Defteri",
+            "question": "\"Yakalama ve Gözaltına Alma Tutanağı\" ile \"Şüpheli/Sanık Hakları Formu\" düzenlenmiş midir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q55",
+            "category": "Nezarethane Defteri",
+            "question": "Yakalama sonrası şüpheli hakkında düzenlenen tutanaklar tam ve eksiksiz midir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q56",
+            "category": "Nezarethane Defteri",
+            "question": "Yakalama işlemi veya gözaltı süresinin uzatılmasında aykırılık bulunup bulunmadığını denetlediniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q57",
+            "category": "Nezarethane Defteri",
+            "question": "Somut bir hukuka aykırılık tespit etti iseniz Sulh Ceza Hakimine başvuru yaptınız mı?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C13",
+        "name": "Savcı Emirleri",
+        "items": [
+          {
+            "id": "Q58",
+            "category": "Savcı Emirleri",
+            "question": "Cumhuriyet savcısına olay hakkında ne zaman bilgi verilmiştir? Bilgi verme vaktini belirlediniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q59",
+            "category": "Savcı Emirleri",
+            "question": "Gözaltına alınan şüpheli için, nezarethaneye girişte sağlık raporu alınmış mıdır?",
+            "type": "yesNo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "P4",
+    "name": "IV. DOSYANIN İNCELENMESİ VE ŞÜPHELİ İLE GÖRÜŞME",
+    "subCategories": [
+      {
+        "id": "C14",
+        "name": "Dosya İncelemesi",
+        "items": [
+          {
+            "id": "Q60",
+            "category": "Dosya İncelemesi",
+            "question": "Soruşturma dosyasını şüpheli ile görüşmeden önce incelediniz mi? (CMK 153/1)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q61",
+            "category": "Dosya İncelemesi",
+            "question": "Soruşturma dosyasından fiziki delil elde edilmiş olduğu anlaşılıyor mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q62",
+            "category": "Dosya İncelemesi",
+            "question": "Kolluk tarafından mağdur veya tanık ifadesi alınmış mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q63",
+            "category": "Dosya İncelemesi",
+            "question": "Dosya hakkında kısıtlama kararı var mı? (CMK 153/2)",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C15",
+        "name": "Görüşme Koşulları",
+        "items": [
+          {
+            "id": "Q64",
+            "category": "Görüşme Koşulları",
+            "question": "Şüpheli ile görüşmenizi müdafi için ayrılmış özel bir bölümde, başkalarının duymayacağı bir ortamda mı yaptınız? (CMK 154/1)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q65",
+            "category": "Görüşme Koşulları",
+            "question": "İlk 24 saat içinde şüpheli ile görüşmeniz engellendi mi? (CMK 154/2) Cevap evet ise, o dönemde ifade alınmış mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q66",
+            "category": "Görüşme Koşulları",
+            "question": "Kısıtlama getiren hakim kararında gerekçe var mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q67",
+            "category": "Görüşme Koşulları",
+            "question": "Görüşme bölümünde, şüpheli ile sizin dışınızda, herhangi bir kolluk görevlisi var mıydı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q68",
+            "category": "Görüşme Koşulları",
+            "question": "Konuşmalarınız kayıt altına alındı veya dinlendi mi?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C16",
+        "name": "Tanıtma ve Giriş",
+        "items": [
+          {
+            "id": "Q69",
+            "category": "Tanıtma ve Giriş",
+            "question": "Şüpheliye kendinizi müdafi olarak tanıttınız ve kimliğinizi gösterdiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q70",
+            "category": "Tanıtma ve Giriş",
+            "question": "Siz gelmeden önce, kolluğun kendisinden bilgi alıp almadığını sordunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q71",
+            "category": "Tanıtma ve Giriş",
+            "question": "Şüpheliye ifade almanın ses ve görüntü kaydının yapılabileceğini söylediniz mi? (CMK 147)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q72",
+            "category": "Tanıtma ve Giriş",
+            "question": "Şüpheliye kolluğun kendisine nasıl davrandığını sordunuz mu? (CMK 148)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q73",
+            "category": "Tanıtma ve Giriş",
+            "question": "Eğer fiziki şiddete uğramışsa, adli tabipliğe sevkini talep ettiniz mi?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C17",
+        "name": "Hakların Öğretilmesi",
+        "items": [
+          {
+            "id": "Q74",
+            "category": "Hakların Öğretilmesi",
+            "question": "Şüpheliye kanuni haklarını öğrettiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q75",
+            "category": "Hakların Öğretilmesi",
+            "question": "Daha önceki aşamalarda kolluk tarafından haklarının bildirilip bildirilmediğini sordunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q76",
+            "category": "Hakların Öğretilmesi",
+            "question": "Yakalama sırasında haklarının bildirilip bildirilmediğini sordunuz mu?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C18",
+        "name": "Yakalama Sebebi Bildirimi",
+        "items": [
+          {
+            "id": "Q77",
+            "category": "Yakalama Sebebi Bildirimi",
+            "question": "Yakalanan kişiye yakalama sebebi bildirilmiş midir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q78",
+            "category": "Yakalama Sebebi Bildirimi",
+            "question": "Yakalama sebebi nedir? (Suç işleme iddiası / İdari gözetim belirtiniz)",
+            "type": "text"
+          },
+          {
+            "id": "Q79",
+            "category": "Yakalama Sebebi Bildirimi",
+            "question": "Suç işleme iddiası ile yakalamada; yüklenen suçun yeri, zamanı ve kime karşı işlendiği bildirilmiş midir?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C19",
+        "name": "Susma Hakkı Bildirimi",
+        "items": [
+          {
+            "id": "Q80",
+            "category": "Susma Hakkı Bildirimi",
+            "question": "Kimliğine ilişkin sorunun dışında, susma hakkının bulunduğunu hatırlattınız mı? Kimlik ile ilgili bilginin tam ve doğru verilmesi gerektiği aksi takdirde suç işlemiş olacağını belirttiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q81",
+            "category": "Susma Hakkı Bildirimi",
+            "question": "Susma hakkını ve bu hakkı kullanmanın yararlı ve sakıncalı yanlarını açıkladınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q82",
+            "category": "Susma Hakkı Bildirimi",
+            "question": "Bazı sorulara cevap verip, bazılarına cevap vermezse, \"kısmi susma\" durumuna düşebileceğini ve bunun aleyhinde sonuçlar doğurabileceğini hatırlattınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q83",
+            "category": "Susma Hakkı Bildirimi",
+            "question": "Kolluk görevlisi şüpheliye yakalama sırasında susma hakkını söylemiş midir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q84",
+            "category": "Susma Hakkı Bildirimi",
+            "question": "Şüpheli yakalama sırasında susma hakkını kullanmış mıdır?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C20",
+        "name": "Müdafi Yardımı Hakkı",
+        "items": [
+          {
+            "id": "Q85",
+            "category": "Müdafi Yardımı Hakkı",
+            "question": "Müdafi seçme ve onun hukuki yardımından yararlanma hakkına sahip olduğu, müdafi seçecek durumda olmadığı ve hukuki yardım isterse Baro tarafından bir müdafi tayin edileceği bildirilmiş midir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q86",
+            "category": "Müdafi Yardımı Hakkı",
+            "question": "İfade alma öncesinde müdafi ile konuşmaları başkalarının duyamayacağı bir ortamda her zaman görüşme hakkına sahip olduğu bildirilmiş midir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q87",
+            "category": "Müdafi Yardımı Hakkı",
+            "question": "Müdafiin hukuki yardımı isterse, müdafisinin \"ifade alma sırasında\" hazır bulunacağı, sorguda müdafiin hazır bulunmasının zorunlu olduğu bildirilmiş midir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q88",
+            "category": "Müdafi Yardımı Hakkı",
+            "question": "Lehine olan hususları ileri sürebileceği bildirilmiş midir?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C21",
+        "name": "Yakınlara Haber Verilmesi",
+        "items": [
+          {
+            "id": "Q89",
+            "category": "Yakınlara Haber Verilmesi",
+            "question": "Yakalandığının kanuni yakınlarına kolluk tarafından kendiliğinden bildirileceği söylenmiş midir?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q90",
+            "category": "Yakınlara Haber Verilmesi",
+            "question": "Yakınları dışında bir kişiye haber verilmesini isterse, bunun C. Savcısı'nın kararına bağlı olduğu bildirilmiş midir?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C22",
+        "name": "Sulh Ceza Başvurusu Hakkı",
+        "items": [
+          {
+            "id": "Q91",
+            "category": "Sulh Ceza Başvurusu Hakkı",
+            "question": "Yakalama işlemi ve gözaltı süresi uzatılırsa, uzatma kararına karşı Sulh Ceza Hakimliğine başvurma hakkı olduğu bildirilmiş midir? (CMK 91/5)",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q92",
+            "category": "Sulh Ceza Başvurusu Hakkı",
+            "question": "Başvuru dilekçesinin en seri şekilde yetkili hakime ulaştırılacağı bildirilmiş midir?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C23",
+        "name": "Suçlama Üzerine",
+        "items": [
+          {
+            "id": "Q93",
+            "category": "Suçlama Üzerine",
+            "question": "Şüpheliden öyküsünü anlatmasını isteyin. Baştan sona dinleyerek, şüpheli açısından olayın nasıl cereyan ettiği konusunda tam ve ayrıntılı bilgi edinin. Bu hususta not tuttunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q94",
+            "category": "Suçlama Üzerine",
+            "question": "Soruşturma dosyasını incelerken elde ettiğiniz bilgileri şüpheli ile paylaşın. Suçlamayı anlatın, suçun kanuni sonuçlarını özellikle öğretin. O zamana kadar toplanan ve soruşturma dosyasında bulunan delillerin neler olduğunu şüpheliye anlattınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q95",
+            "category": "Suçlama Üzerine",
+            "question": "Lehine olan delillerin neler olabileceğini şüpheli ile tartışın ve bunların nereden, nasıl toplanacağını sordunuz mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q96",
+            "category": "Suçlama Üzerine",
+            "question": "Gece yarısı ve sonrasında yorgun ve uykusuz olduğu için, ifade vermesinin iradesini sakatlayabileceğini, savunma hakkını kısıtlayıcı ve aleyhe sonuçlar doğurabileceğini anlatın. Bunun, özellikle (CMK 148) madde uyarınca, yasak sorgu yöntemlerinden birisi olacağını, bunun için ifadesini daha sakin ve rahat olacağı ve nispeten dinlenmiş olarak sabah verebileceğini, bundan çekinmemesi gerektiğini anlatınız. Müdafi olarak gece yarısından sonra ifade alınmasının (CMK 148) ihlali olabileceğini belirttiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q97",
+            "category": "Suçlama Üzerine",
+            "question": "İfade alma sırasında hukuka aykırı bir soru veya işlem ile karşılaştığınız takdirde, müdafi olarak müdahale etme yetkiniz bulunduğunu, bu gibi hallerde sizin harekete geçerek uyarıda bulunacağınızı söylediniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q98",
+            "category": "Suçlama Üzerine",
+            "question": "İsnat edilen suç ile ilgili olarak, varsa uzlaşma veya etkin pişmanlık hükümlerini kendisine hatırlatın. Şüpheli aleyhinde bazı emareler varsa, bunlar hakkında açıklama yapmasının lehine olabileceğini söylediniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q99",
+            "category": "Suçlama Üzerine",
+            "question": "İfade alma sırasında sorulan sorulara emin olmadan cevap vermemesi gerektiğini, ilerde sıkıntıya düşebileceğini kendisine hatırlattınız mı?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C24",
+        "name": "İfade Kararı (Susma/Konuşma)",
+        "items": [
+          {
+            "id": "Q100",
+            "category": "İfade Kararı (Susma/Konuşma)",
+            "question": "Bu öğretici evreden sonra, ifade alma sırasında \"susma hakkını kullanıp kullanmama konusunda\" bir karar vermesini istediniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q101",
+            "category": "İfade Kararı (Susma/Konuşma)",
+            "question": "Şüpheli susma hakkını kullanmayıp, ifade vermeyi kabul ettiği takdirde; gerek duyduğunuzda, sizin de, hukuki yardımda bulunmak için, ara verme isteyebileceğinizi, söyleyin. Gerek duyarsa, müdafii olarak sizinle tekrar görüşmek için ara verilmesini isteyebileceğini hatırlattınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q102",
+            "category": "İfade Kararı (Susma/Konuşma)",
+            "question": "Kolluk tarafından sadece anlattırıcı sorular sorulabileceğini, yönlendirici, suçlayıcı ve suç isnat edici soru sorulamayacağını, bu gibi hallerde, müdafi olarak müdahale edebileceğinizi bildirdiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q103",
+            "category": "İfade Kararı (Susma/Konuşma)",
+            "question": "Şüpheliye ifade verebilecek durumda olup olmadığını sorun. İfade esnasında yorulduğu anda, ara isteyebileceğini hatırlattınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q104",
+            "category": "İfade Kararı (Susma/Konuşma)",
+            "question": "Şüphelinin özgür iradesi tam olarak yerinde midir? Sarhoş veya hasta olduğu için, ifade verebilecek durumda olmadığı kanısında iseniz, görüşmeye son verdiniz ve ifade alma aşamasına geçilemeyeceğini ilgili birime bildirdiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q105",
+            "category": "İfade Kararı (Susma/Konuşma)",
+            "question": "Makul süresi işin niteliğine göre, müdafi tarafından belirlenen (CMK 154) görüşmeniz ne kadar sürdü?",
+            "type": "text"
+          },
+          {
+            "id": "Q106",
+            "category": "İfade Kararı (Susma/Konuşma)",
+            "question": "Müdafilikten çekilmenizi gerektiren nedenler var mı? Şüpheli ile yaptığınız görüşme neticesinde, bu şüpheli açısından müdafilik görevi yapmanızı engelleyen yasal nedenler bulunduğunu belirlerseniz, bunları aşağıya not ediniz.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "P5",
+    "name": "V. İFADE ALMA",
+    "subCategories": [
+      {
+        "id": "C25",
+        "name": "Giriş",
+        "items": [
+          {
+            "id": "Q107",
+            "category": "Giriş",
+            "question": "İfade alma saat kaçta başladı? İfade alma saat kaçta sona erdi?",
+            "type": "text"
+          },
+          {
+            "id": "Q108",
+            "category": "Giriş",
+            "question": "Ses ve görüntü kaydı yapıldı mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q109",
+            "category": "Giriş",
+            "question": "Şüphelinin ifade verecek durumda olmadığını belirlemiş iseniz, bunu ifadeyi alacak olan kolluk görevlisine bildirdiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q110",
+            "category": "Giriş",
+            "question": "Şüphelinin tercümandan yararlanması gerektiğini belirlemişseniz, bunu ifadeyi alacak olan kolluk görevlisine bildirdiniz mi?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C26",
+        "name": "Kimlik Tespiti",
+        "items": [
+          {
+            "id": "Q111",
+            "category": "Kimlik Tespiti",
+            "question": "Kimlik tespitinin doğru yapıldığına dikkat ettiniz mi?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C27",
+        "name": "Suçlama ve Hakların Bildirilmesi",
+        "items": [
+          {
+            "id": "Q112",
+            "category": "Suçlama ve Hakların Bildirilmesi",
+            "question": "Şüpheliye istinat eden fiil, yer, zaman ve kişi belirtilerek anlatıldı mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q113",
+            "category": "Suçlama ve Hakların Bildirilmesi",
+            "question": "İfade alan kolluk görevlisi veya savcı susma hakkını hatırlattı mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q114",
+            "category": "Suçlama ve Hakların Bildirilmesi",
+            "question": "Aleyhine var olan şüphe sebeplerini ortadan kaldırmak ve lehine olan delilleri ileri sürme imkanı verildi mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q115",
+            "category": "Suçlama ve Hakların Bildirilmesi",
+            "question": "İmkan verilmedi ise, ifadeye ara verdirmek üzere müdahale edin ve durumu soruşturmayı yürüten Cumhuriyet savcısına bildirin. Her halde, tutanağa şerh düştünüz mü?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C28",
+        "name": "Esas Hakkında Sorular",
+        "items": [
+          {
+            "id": "Q116",
+            "category": "Esas Hakkında Sorular",
+            "question": "İfade alma sırasında sorulan soruların \"anlattırıcı soru\" olmasına dikkat edin. Soruların 5N/1K tipinde (ne, ne zaman, nasıl, ne için, nerede ve kim) olmasını sağladınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q117",
+            "category": "Esas Hakkında Sorular",
+            "question": "İfadenin (CMK 148/1) uyarınca, özgür iradeye dayalı olarak alındığına dikkat edin. Aksi halde müdahale edin. Bu yönde müdahaleniz oldu mu? Varsa not ettiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q118",
+            "category": "Esas Hakkında Sorular",
+            "question": "Yönlendirici soru sorulmamasına, cevabı içinde bulunan ve sadece ''evet\" veya ''hayır\" ile cevaplandırılabilen (kapı açıktı, değil mi?) soru sorulmamasına dikkat edin. Sorulursa, müdahale edin ve müdahalenizi tutanağa geçirtin. Bu yönde müdahaleniz oldu mu? Varsa not ettiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q119",
+            "category": "Esas Hakkında Sorular",
+            "question": "Yaptığınız diğer bütün müdahalelerin tutanağa geçirilmesini sağlayın. Bu yönde müdahaleniz oldu mu? Varsa not ettini mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q120",
+            "category": "Esas Hakkında Sorular",
+            "question": "Gözaltına alınmış olan şüphelinin serbest bırakılmasını talep ettiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q121",
+            "category": "Esas Hakkında Sorular",
+            "question": "Şüpheli ile tekrar görüştünüz mü? Sorulan sorular ve verilen cevaplar ile ilgili önemli noktalar nelerdi? Not etiniz mi?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C29",
+        "name": "Tutanak Hazırlama ve İmza",
+        "items": [
+          {
+            "id": "Q122",
+            "category": "Tutanak Hazırlama ve İmza",
+            "question": "İfade tutanağının şüphelinin ve sizin beyanlarınızı doğru olarak yansıttığına dikkat edin. Tutanağı okuyup ye şüpheliye de okutup, imzanızı daha sonra attınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q123",
+            "category": "Tutanak Hazırlama ve İmza",
+            "question": "Tutanağı imzadan imtina ederseniz, nedenlerinizi, mutlaka gerekçeli olarak yazın. Bu yönde müdahaleniz oldu mu?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q124",
+            "category": "Tutanak Hazırlama ve İmza",
+            "question": "İfadeyi alan, yazanın isim ve sicil numaralarının yazılıp yazılmadığını kontrol ettiniz mi?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C30",
+        "name": "Sonrası İşlemler",
+        "items": [
+          {
+            "id": "Q125",
+            "category": "Sonrası İşlemler",
+            "question": "İfade alma sonrası polis merkezinde kaldınız mı? Kaldı iseniz, ne gibi işlemler yaptınız?",
+            "type": "text"
+          },
+          {
+            "id": "Q126",
+            "category": "Sonrası İşlemler",
+            "question": "Şüpheli tutuklamaya sevkedildi mi?",
+            "type": "yesNo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "P6",
+    "name": "VI. SERİ MUHAKEME VE BASİT YARGILAMA USULLERİ",
+    "subCategories": [
+      {
+        "id": "C31",
+        "name": "Seri Muhakeme",
+        "items": [
+          {
+            "id": "Q127",
+            "category": "Seri Muhakeme",
+            "question": "Cumhuriyet Savcısı veya kolluk görevlileri şüpheliyi seri muhakeme usulü (CMK 250) hakkında bilgilendirmiş mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q128",
+            "category": "Seri Muhakeme",
+            "question": "Seri Muhakeme Usulü hakkında şüpheliyi müdafi olarak siz bilgilendirdiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q129",
+            "category": "Seri Muhakeme",
+            "question": "Şüpheliye yüklenen suçun (CMK 250/1) maddede sayılan suçlardan biri olup olmadığını kontrol ettiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q130",
+            "category": "Seri Muhakeme",
+            "question": "İştirak halinde işlenen suçlarda şüphelilerden birinin kabul etmemesi halinde seri muhakeme usulünün uygulanamayacağını (CMK 250/11) dikkate alarak suçun iştirak halinde işlenip işlenmediğini araştırdınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q131",
+            "category": "Seri Muhakeme",
+            "question": "Seri Muhakeme Usulünün uygulanmasını kabul ettiği takdirde Cumhuriyet Savcısının tespit edeceği temel cezadan yarı oranında indirim uygulanmak suretiyle yaptırımın belirleneceğini şüpheliye söylediniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q132",
+            "category": "Seri Muhakeme",
+            "question": "Cumhuriyet Savcısının belirlediği yaptırımın seçenek yaptırımlara çevrilebileceğini, ertelenebileceğini, hükmün açıklanmasının geri bırakılmasının uygulanabileceğini fakat güvenlik tedbirlerine ilişkin hükümlerin uygulanmasına engel teşkil etmeyeceğini şüpheliye söylediniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q133",
+            "category": "Seri Muhakeme",
+            "question": "Seri Muhakeme Usulünün uygulanmasını kabul etmediği takdirde yaptırım belirlenemeyeceğini, savcının soruşturmaya devam ederek sonucuna göre iddianame düzenleyebileceği ve genel hükümlere göre muhakemenin devam edeceğini şüpheliye bildirdiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q134",
+            "category": "Seri Muhakeme",
+            "question": "Soruşturmanın genel hükümlere göre yürütüleceği hallerde seri muhakeme usulünü kabul ettiğine ilişkin beyanların ve hazırlanan diğer belgelerin soruşturma ve kovuşturmada delil olarak kullanılamayacağını (CMK 250/10) şüpheliye bildirdiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q135",
+            "category": "Seri Muhakeme",
+            "question": "Seri Muhakeme Usulü'nün müdafi olan sizin yanınızda özgür iradesi ile kabul ettiği ve suçun (CMK 250/1) kapsamındaki suçlardan biri olduğu mahkemece müdafi huzurunda şüpheli dinlenerek saptandığında mahkemenin savcının talebi doğrultusunda hüküm kuracağını ve kesin hüküm ortaya çıkacağını, yani daha sonra istinaf veya temyiz kanun yoluna başvuramayacağını şüpheliye anlattınız mı?",
+            "type": "yesNo"
+          }
+        ]
+      },
+      {
+        "id": "C32",
+        "name": "Basit Yargılama",
+        "items": [
+          {
+            "id": "Q136",
+            "category": "Basit Yargılama",
+            "question": "Basit yargılama usulü (CMK 251) asliye ceza mahkemesinin görev alanına giren ve adli para cezasını veya üst sınırı 2 yıl veya daha az süreli hapis cezasını gerektiren suçlarda uygulanabileceği için, sanığa isnat edilen suçun bu kapsamına girdiğini kontrol ettiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q137",
+            "category": "Basit Yargılama",
+            "question": "Mahkeme basit yargılama usulünün uygulanmasına kendiliğinden karar verebilmektedir. Bu karar sanığa tebliğ edilmekte ve savunmaların 15 gün içerisinde bildirilmesi gerekmektedir (CMK 251/2) Basit yargılama usulünde yazılı olarak savunma hazırladınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q138",
+            "category": "Basit Yargılama",
+            "question": "Sanığa basit yargılama usulünde duruşma yapılmaksızın hüküm verileceğini ve mahkemenin (CMK 223)'te belirtilen hüküm türlerinden birini seçerek dosyadaki delil durumuna göre ve hazırlanan savunmayı dikkate alarak beraat kararı verebileceği gibi, mahkumiyet hükmü de kurabileceğini belirttiniz mi?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q139",
+            "category": "Basit Yargılama",
+            "question": "Mahkumiyet kararı verildiği takdirde sonuç cezanın dörtte bir oranında indirileceğini sanığa açıkladınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q140",
+            "category": "Basit Yargılama",
+            "question": "Duruşma yapılmaksızın hüküm verildiği için bu hükme yedi gün içinde itiraz ettiği takdirde hükmün ortadan kalkacağını ve yargılamanın genel hükümlere göre devam edeceğini, ancak sanık tarafından itiraz edilen hallerde dörtte birlik indirimden sanığın yararlanamayacağını (CMK 252/3) açıkladınız mı?",
+            "type": "yesNo"
+          },
+          {
+            "id": "Q141",
+            "category": "Basit Yargılama",
+            "question": "Basit yargılama usulünde verilen hükme karşı yedi gün içinde itiraz edilmediği takdirde hükmün kesinleşeceğini, yani bu hükme karşı istinaf veya temyiz kanun yoluna başvurulamayacağını sanığa açıkladınız mı?",
+            "type": "yesNo"
+          }
+        ]
+      }
+    ]
+  }
+]
