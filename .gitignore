@@ -62,3 +62,5 @@ web-build/
 
 # Data
 /src/data/laws_content
+
+__pycache__/
