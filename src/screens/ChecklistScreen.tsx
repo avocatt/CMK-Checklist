@@ -17,43 +17,11 @@ import {
 import { checklistData as initialChecklistData } from '../data'; // Renamed to avoid confusion
 import { legalReferences } from '../data';
 import { useChecklist } from '../hooks/useChecklist';
+import { useTheme } from '../hooks/useTheme';
 import { Phase, SubCategory, ChecklistItem } from '../types';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { RootStackParamList } from '../../App'; // Import RootStackParamList
-
-// Define Modern Clarity color palettes - Updated for Apple-like styling
-const lightColors = {
-  background: '#F2F2F7', // Apple System Gray 6
-  card: '#FFFFFF',
-  text: '#000000',
-  textSecondary: '#8A8A8E', // Apple System Gray
-  accent: '#007AFF', // Apple Blue
-  accentGreen: '#34C759', // Apple Green
-  border: '#D1D1D6', // Apple System Gray 4
-  placeholder: '#C7C7CD', // Apple System Gray 2
-  highlightBackground: '#FEFFD6', // Lighter yellow
-  highlightText: '#000000',
-  flagged: '#FF3B30', // Apple Red (used for checkbox, consider renaming if flag concept is removed)
-  flaggedIcon: '#FF3B30', // Apple Red
-  notesBackground: '#EFEFF4', // Specific for notes area
-};
-
-const darkColors = {
-  background: '#1C1C1E', // Apple System Gray 6 Dark
-  card: '#2C2C2E', // Apple System Gray 5 Dark
-  text: '#FFFFFF',
-  textSecondary: '#8E8E93', // Apple System Gray Dark
-  accent: '#0A84FF', // Apple Blue Dark
-  accentGreen: '#30D158', // Apple Green Dark
-  border: '#38383A', // Apple System Gray 4 Dark
-  placeholder: '#8E8E93', // Apple System Gray Dark (same as secondary)
-  highlightBackground: '#B0A000', // Darker yellow for highlight
-  highlightText: '#FFFFFF',
-  flagged: '#FF453A', // Apple Red Dark
-  flaggedIcon: '#FF453A',
-  notesBackground: '#2C2C2E', // Specific for notes area in dark mode
-};
 
 type ChecklistScreenRouteProp = RouteProp<RootStackParamList, 'Checklist'>;
 
@@ -80,12 +48,13 @@ export default function ChecklistScreen() {
   const [textInputValue, setTextInputValue] = useState<{ [key: string]: string }>({});
   const [generalNotesValue, setGeneralNotesValue] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState('');
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [selectedKeyword, setSelectedKeyword] = useState<{ word: string, note: string } | null>(null);
+  
+  // Theme hook
+  const { isDarkMode, colors } = useTheme();
 
   // Animation values
   const [fadeAnim] = useState(new Animated.Value(1));
-  const colors = isDarkMode ? darkColors : lightColors;
 
   // Select the active checklist when the component mounts or caseId changes
   useEffect(() => {
@@ -231,6 +200,8 @@ export default function ChecklistScreen() {
     // Consider debouncing this if performance is an issue for very long notes
     updateGeneralNotes(text);
   }, [updateGeneralNotes]);
+
+
 
   // Toggle phase expansion
   const togglePhase = (phaseId: string) => {
@@ -508,28 +479,34 @@ export default function ChecklistScreen() {
         </TouchableOpacity>
       </View>
       
+      {/* Sticky General Notes Section */}
+      <View style={[
+        styles.stickyGeneralNotesContainer, 
+        {
+          backgroundColor: colors.card, 
+          borderColor: colors.border
+        }
+      ]}>
+        <Text style={[styles.generalNotesTitle, {color: colors.text}]}>Genel Notlar</Text>
+        <TextInput
+          style={[styles.stickyGeneralNotesInput, {
+            backgroundColor: colors.notesBackground, 
+            color: colors.text, 
+            borderColor: colors.border
+          }]}
+          value={generalNotesValue}
+          onChangeText={handleGeneralNotesChange}
+          placeholder="Bu görevle ilgili genel notlarınızı buraya yazın..."
+          placeholderTextColor={colors.placeholder}
+          multiline
+          numberOfLines={3}
+        />
+      </View>
+      
       <Animated.ScrollView 
         style={[styles.scrollView, { opacity: fadeAnim }]}
         keyboardShouldPersistTaps="handled"
       >
-        {/* General Notes Section */}
-        <View style={[styles.generalNotesContainer, {backgroundColor: colors.card, borderColor: colors.border}]}>
-            <Text style={[styles.generalNotesTitle, {color: colors.text}]}>Genel Notlar</Text>
-            <TextInput
-                style={[styles.generalNotesInput, {
-                    backgroundColor: colors.notesBackground, 
-                    color: colors.text, 
-                    borderColor: colors.border
-                }]}
-                value={generalNotesValue}
-                onChangeText={handleGeneralNotesChange}
-                placeholder="Bu görevle ilgili genel notlarınızı buraya yazın..."
-                placeholderTextColor={colors.placeholder}
-                multiline
-                numberOfLines={3} // Initial height
-            />
-        </View>
-
         {filteredData.map((phase: Phase) => (
           <View key={phase.id} style={[styles.phaseContainer, {backgroundColor: colors.card}]}>
             <TouchableOpacity
@@ -616,17 +593,6 @@ export default function ChecklistScreen() {
           </View>
         ))}
       </Animated.ScrollView>
-      <TouchableOpacity
-        style={[
-          styles.darkModeButton,
-          {backgroundColor: colors.accent}
-        ]}
-        onPress={() => setIsDarkMode(!isDarkMode)}
-      >
-        <Text style={styles.darkModeButtonText}>
-          {isDarkMode ? '☀️' : '☾'}
-        </Text>
-      </TouchableOpacity>
       <Modal
         visible={selectedKeyword !== null}
         transparent={true}
@@ -661,26 +627,7 @@ export default function ChecklistScreen() {
 
 const styles = StyleSheet.create({
   // ... (most styles remain the same or are adapted with `colors.`)
-  // Add styles for General Notes
-  generalNotesContainer: {
-    marginHorizontal: 16,
-    marginTop: 10, // Spacing from search bar or top
-    marginBottom: 10,
-    padding: 15,
-    borderRadius: 10,
-    borderWidth: StyleSheet.hairlineWidth,
-     ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 2,
-      },
-    }),
-  },
+  // Removed old generalNotesContainer - now using stickyGeneralNotesContainer
   generalNotesTitle: {
     fontSize: 16,
     fontWeight: '600',
@@ -693,6 +640,33 @@ const styles = StyleSheet.create({
     fontSize: 15,
     borderRadius: 8,
     borderWidth: StyleSheet.hairlineWidth,
+  },
+  stickyGeneralNotesContainer: {
+    marginHorizontal: 16,
+    marginBottom: 10,
+    padding: 15,
+    borderRadius: 10,
+    borderWidth: StyleSheet.hairlineWidth,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+      },
+      android: {
+        elevation: 2,
+      },
+    }),
+  },
+  stickyGeneralNotesInput: {
+    minHeight: 60,
+    textAlignVertical: 'top',
+    padding: 10,
+    fontSize: 15,
+    borderRadius: 8,
+    borderWidth: StyleSheet.hairlineWidth,
+    marginTop: 8,
   },
   container: {
     flex: 1,
@@ -751,7 +725,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   phaseContainer: {
-    marginTop: 10, // Reduced from 20
+    marginTop: 20, // Increased to account for sticky general notes
     marginBottom: 0, // Let subcategories or next phase define gap
     marginHorizontal: 16,
     // backgroundColor handled by inline style
@@ -832,12 +806,12 @@ const styles = StyleSheet.create({
   },
   // darkCheckboxVisual handled by inline style
   checkboxFlaggedLight: { // This will be an object
-    backgroundColor: lightColors.flagged,
-    borderColor: lightColors.flagged,
+    backgroundColor: '#FF3B30',
+    borderColor: '#FF3B30',
   },
   checkboxFlaggedDark: { // This will be an object
-    backgroundColor: darkColors.flagged,
-    borderColor: darkColors.flagged,
+    backgroundColor: '#FF453A',
+    borderColor: '#FF453A',
   },
   flagIcon: {
     color: '#FFFFFF', // White flag icon for both modes
@@ -929,33 +903,4 @@ const styles = StyleSheet.create({
     // color handled by inline
   },
   // darkModalContent, darkModalHeader handled by inline styles
-  darkModeButton: {
-    position: 'absolute',
-    right: 20,
-    bottom: 20,
-    width: 48,
-    height: 48,
-    borderRadius: 24, // Circular
-    // backgroundColor handled by inline
-    alignItems: 'center',
-    justifyContent: 'center',
-    ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
-      },
-      android: {
-        elevation: 6,
-      },
-    }),
-  },
-  // darkDarkModeButton handled by inline
-  darkDarkModeButton: {
-    backgroundColor: darkColors.accent,
-  },
-  darkModeButtonText: {
-    fontSize: 22,
-  },
 }); 

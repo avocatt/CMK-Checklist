@@ -12,35 +12,11 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { useChecklist } from '../hooks/useChecklist';
+import { useTheme } from '../hooks/useTheme';
 import { CaseChecklist } from '../types';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
-
-// Define Modern Clarity color palettes - Consistent with ChecklistScreen
-const lightColors = {
-  background: '#F2F2F7', // Apple System Gray 6
-  card: '#FFFFFF',
-  text: '#000000',
-  textSecondary: '#8A8A8E', // Apple System Gray
-  accent: '#007AFF', // Apple Blue
-  border: '#D1D1D6', // Apple System Gray 4
-  placeholder: '#C7C7CD', // Apple System Gray 2
-  destructive: '#FF3B30', // Apple Red
-  inputBackground: '#EFEFF4', // Slightly different for inputs if needed
-};
-
-const darkColors = {
-  background: '#1C1C1E', // Apple System Gray 6 Dark
-  card: '#2C2C2E', // Apple System Gray 5 Dark
-  text: '#FFFFFF',
-  textSecondary: '#8E8E93', // Apple System Gray Dark
-  accent: '#0A84FF', // Apple Blue Dark
-  border: '#38383A', // Apple System Gray 4 Dark
-  placeholder: '#8E8E93',
-  destructive: '#FF453A', // Apple Red Dark
-  inputBackground: '#3A3A3C',
-};
 
 type RootStackParamList = {
   Home: undefined;
@@ -58,10 +34,9 @@ export default function HomeScreen() {
     loadAllChecklists,
     renameChecklist,
   } = useChecklist();
+  const { isDarkMode, colors } = useTheme();
   const navigation = useNavigation<HomeScreenNavigationProp>();
   const isFocused = useIsFocused();
-
-  const [isDarkMode, setIsDarkMode] = useState(false); // Or use a global theme context
   const [modalVisible, setModalVisible] = useState(false);
   const [newCaseName, setNewCaseName] = useState('');
   const [editingChecklist, setEditingChecklist] = useState<CaseChecklist | null>(null);
@@ -79,27 +54,20 @@ export default function HomeScreen() {
   }, [isFocused, loadAllChecklists]);
   
   useEffect(() => {
-    // Example: Set header options dynamically based on dark mode
+    // Set header options dynamically based on system theme
     navigation.setOptions({
       headerStyle: {
-        backgroundColor: isDarkMode ? darkColors.background : lightColors.background,
+        backgroundColor: colors.background,
         borderBottomWidth: StyleSheet.hairlineWidth,
-        borderBottomColor: isDarkMode ? darkColors.border : lightColors.border,
+        borderBottomColor: colors.border,
       },
       headerTitleStyle: {
-        color: isDarkMode ? darkColors.text : lightColors.text,
+        color: colors.text,
         fontSize: 17,
         fontWeight: '600',
       },
-      headerRight: () => (
-        <TouchableOpacity onPress={() => setIsDarkMode(!isDarkMode)} style={{ marginRight: 15 }}>
-          <Text style={{ color: isDarkMode ? darkColors.accent : lightColors.accent, fontSize: 22 }}>
-            {isDarkMode ? '☀️' : '☾'}
-          </Text>
-        </TouchableOpacity>
-      ),
     });
-  }, [isDarkMode, navigation, lightColors, darkColors]);
+  }, [isDarkMode, navigation, colors]);
 
 
   const handleCreateNew = () => {
@@ -157,27 +125,25 @@ export default function HomeScreen() {
 
   const renderItem = ({ item }: { item: CaseChecklist }) => (
     <TouchableOpacity
-      style={[styles.itemContainer, isDarkMode && styles.darkItemContainer]}
+      style={[styles.itemContainer, { backgroundColor: colors.card }]}
       onPress={() => navigation.navigate('Checklist', { caseId: item.id, caseName: item.name })}
     >
       <View style={styles.itemTextContainer}>
-        <Text style={[styles.itemText, isDarkMode && styles.darkItemText]}>{item.name}</Text>
-        <Text style={[styles.itemDate, isDarkMode && styles.darkItemDate]}>
+        <Text style={[styles.itemText, { color: colors.text }]}>{item.name}</Text>
+        <Text style={[styles.itemDate, { color: colors.textSecondary }]}>
           Son Güncelleme: {new Date(item.lastUpdated).toLocaleString()}
         </Text>
       </View>
       <View style={styles.itemActionsContainer}>
         <TouchableOpacity onPress={() => handleRename(item)} style={styles.actionButton}>
-            <Text style={[styles.actionIcon, {color: isDarkMode ? darkColors.accent : lightColors.accent}]}>✎</Text>
+            <Text style={[styles.actionIcon, {color: colors.accent}]}>✎</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleDelete(item.id, item.name)} style={styles.actionButton}>
-            <Text style={[styles.actionIcon, {color: isDarkMode ? darkColors.destructive : lightColors.destructive}]}>🗑</Text>
+            <Text style={[styles.actionIcon, {color: colors.destructive}]}>🗑</Text>
         </TouchableOpacity>
       </View>
     </TouchableOpacity>
   );
-  
-  const colors = isDarkMode ? darkColors : lightColors;
 
   if (loading && !allChecklists.length) { // Show loading only on initial load and if no data yet
     return (
@@ -251,13 +217,13 @@ export default function HomeScreen() {
                   setEditingChecklist(null);
                 }}
               >
-                <Text style={[styles.modalButtonText, {color: lightColors.card}]}>İptal</Text>
+                <Text style={[styles.modalButtonText, {color: 'white'}]}>İptal</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.modalButton, { backgroundColor: colors.accent }]}
                 onPress={submitModal}
               >
-                <Text style={[styles.modalButtonText, {color: lightColors.card}]}>{editingChecklist ? "Kaydet" : "Oluştur"}</Text>
+                <Text style={[styles.modalButtonText, {color: 'white'}]}>{editingChecklist ? "Kaydet" : "Oluştur"}</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -279,7 +245,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: lightColors.card,
+    backgroundColor: '#FFFFFF', // Default light color, overridden by inline style
     padding: 15,
     marginVertical: 6,
     marginHorizontal: 12,
@@ -297,7 +263,7 @@ const styles = StyleSheet.create({
     }),
   },
   darkItemContainer: {
-    backgroundColor: darkColors.card,
+    backgroundColor: '#2C2C2E', // Will be overridden by inline style
   },
   itemTextContainer: {
     flex: 1,
@@ -305,18 +271,18 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 17,
     fontWeight: '500',
-    color: lightColors.text,
+    color: '#000000', // Default light color, overridden by inline style
   },
   darkItemText: {
-    color: darkColors.text,
+    color: '#FFFFFF', // Will be overridden by inline style
   },
   itemDate: {
     fontSize: 13,
-    color: lightColors.textSecondary,
+    color: '#8A8A8E', // Default light color, overridden by inline style
     marginTop: 4,
   },
   darkItemDate: {
-    color: darkColors.textSecondary,
+    color: '#8E8E93', // Will be overridden by inline style
   },
   itemActionsContainer: {
     flexDirection: 'row',
