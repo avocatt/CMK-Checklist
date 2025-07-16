@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import os
 import time
+import json
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -25,6 +27,9 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def scrape_law_content(url, file_name):
     print(f"Scraping {file_name} from {url}")
+    
+    # Capture scraping timestamp
+    scrape_timestamp = datetime.utcnow().isoformat() + 'Z'
 
     # Setup Chrome options
     chrome_options = Options()
@@ -33,8 +38,9 @@ def scrape_law_content(url, file_name):
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
 
-    # Initialize the driver
-    driver = webdriver.Chrome(options=chrome_options)
+    # Initialize the driver with system ChromeDriver
+    service = Service('/opt/homebrew/bin/chromedriver')
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     try:
         # Load the page
@@ -64,9 +70,25 @@ def scrape_law_content(url, file_name):
             f.write(content)
 
         print(f"Successfully saved {file_name} to {output_path}")
+        
+        # Return metadata for tracking
+        return {
+            'law_code': file_name,
+            'url': url,
+            'scraped_at': scrape_timestamp,
+            'success': True,
+            'file_path': output_path
+        }
 
     except Exception as e:
         print(f"Error scraping {file_name}: {str(e)}")
+        return {
+            'law_code': file_name,
+            'url': url,
+            'scraped_at': scrape_timestamp,
+            'success': False,
+            'error': str(e)
+        }
 
     finally:
         # Close the browser
@@ -74,12 +96,25 @@ def scrape_law_content(url, file_name):
 
 
 def main():
+    scraping_metadata = []
+    
     for law_code, url in URLS.items():
-        scrape_law_content(url, law_code)
+        metadata = scrape_law_content(url, law_code)
+        if metadata:
+            scraping_metadata.append(metadata)
         # Add a small delay between requests to avoid overloading the server
         time.sleep(2)
-
+    
+    # Save scraping metadata
+    metadata_file = os.path.join(OUTPUT_DIR, "scraping_metadata.json")
+    with open(metadata_file, "w", encoding="utf-8") as f:
+        json.dump({
+            'scraping_run': datetime.utcnow().isoformat() + 'Z',
+            'laws_scraped': scraping_metadata
+        }, f, ensure_ascii=False, indent=2)
+    
     print("Scraping completed!")
+    print(f"Metadata saved to {metadata_file}")
 
 
 if __name__ == "__main__":

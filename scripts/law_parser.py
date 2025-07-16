@@ -4,6 +4,9 @@ import re
 import json
 from bs4 import BeautifulSoup
 import argparse
+from datetime import datetime
+from content_tracker import ContentTracker
+from metadata_manager import MetadataManager
 
 # Define the target articles list
 TARGET_ARTICLES = [
@@ -276,6 +279,10 @@ def parse_html_file(file_path):
 def process_all_files(directory, output_file):
     """Process all HTML files in the directory and generate a single JSON file."""
     result = {}
+    
+    # Initialize content tracker and metadata manager
+    tracker = ContentTracker(history_file='../src/data/generated/law_content_history.json')
+    metadata_manager = MetadataManager()
 
     for filename in os.listdir(directory):
         if filename.endswith('.html'):
@@ -284,9 +291,24 @@ def process_all_files(directory, output_file):
 
             articles = parse_html_file(file_path)
 
-            # Add to the result dictionary
+            # Add to the result dictionary with metadata enhancement
             for article in articles:
                 key = f"{article['code']} {article['article']}"
+                
+                # Track content and add metadata
+                tracking_result = tracker.track_article(
+                    code=article['code'],
+                    article=article['article'],
+                    content=article['content'],
+                    title=article.get('title', ''),
+                    source_url=f"https://www.mevzuat.gov.tr/mevzuat?MevzuatNo={article['code']}"
+                )
+                
+                # Add metadata to article
+                article['lastUpdated'] = tracking_result['lastUpdated']
+                article['checksum'] = tracking_result['checksum']
+                article['sourceUrl'] = f"https://www.mevzuat.gov.tr/mevzuat?MevzuatNo={article['code']}"
+                
                 result[key] = article
 
     # Special handling for any missing articles, particularly CMK with "/1" sub-articles
@@ -357,27 +379,54 @@ def process_all_files(directory, output_file):
 
                                 idx += 1
 
-                            # Add to results
+                            # Add to results with metadata
                             article_id = target.split(' ')[1]
-                            result[target] = {
+                            article_data = {
                                 'code': law_code,
                                 'article': article_id,
                                 'title': article_title,
                                 'content': sub_content
                             }
+                            
+                            # Track content and add metadata
+                            tracking_result = tracker.track_article(
+                                code=law_code,
+                                article=article_id,
+                                content=sub_content,
+                                title=article_title,
+                                source_url=f"https://www.mevzuat.gov.tr/mevzuat?MevzuatNo={law_code}"
+                            )
+                            
+                            article_data['lastUpdated'] = tracking_result['lastUpdated']
+                            article_data['checksum'] = tracking_result['checksum']
+                            article_data['sourceUrl'] = f"https://www.mevzuat.gov.tr/mevzuat?MevzuatNo={law_code}"
+                            
+                            result[target] = article_data
                             print(f"  Successfully extracted {target}")
 
     # Write the result to a single JSON file
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
+    # Generate change detection report
+    all_articles = list(result.values())
+    changes = tracker.detect_changes(all_articles)
+    change_report = tracker.generate_change_report(changes)
+    
     # Print summary
-    print(
-        f"Processed {len(result)} articles out of {len(TARGET_ARTICLES)} target articles")
+    print("\n" + "="*60)
+    print(f"Processed {len(result)} articles out of {len(TARGET_ARTICLES)} target articles")
     if missing_articles:
         print(
             f"Missing {len(missing_articles)} articles: {', '.join(missing_articles)}")
     print(f"Saved to {output_file}")
+    
+    # Print change report
+    print("\n" + change_report)
+    
+    # Also save the change report to a file
+    with open('../src/data/generated/law_content_changes.txt', 'w', encoding='utf-8') as f:
+        f.write(change_report)
 
     return result
 
@@ -388,7 +437,7 @@ def main():
     parser.add_argument('--input-dir', default='../src/data/laws_content',
                         help='Directory containing HTML files')
     parser.add_argument(
-        '--output-file', default='../src/data/html_content_parsed.json', help='Output JSON file')
+        '--output-file', default='../src/data/generated/html_content_parsed.json', help='Output JSON file')
     args = parser.parse_args()
 
     # Process all HTML files and output to a single file

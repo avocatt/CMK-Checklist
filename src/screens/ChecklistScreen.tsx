@@ -19,11 +19,12 @@ import { checklistData as initialChecklistData } from '../data';
 import { legalReferences } from '../data';
 import { useChecklist } from '../hooks/useChecklist';
 import { useTheme } from '../hooks/useTheme';
-import { Phase, SubCategory, ChecklistItem } from '../types';
+import { Phase, SubCategory, ChecklistItem, LegalReference } from '../types';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { RootStackParamList } from '../../App'; // Import RootStackParamList
 import { Ionicons } from '@expo/vector-icons'; // Ensure Ionicons is imported
+import { formatDate, isContentOld, getContentAgeWarning } from '../utils/contentHelpers';
 
 type ChecklistScreenRouteProp = RouteProp<RootStackParamList, 'Checklist'>;
 
@@ -50,7 +51,7 @@ export default function ChecklistScreen() {
 
   const [generalNotesValue, setGeneralNotesValue] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedKeyword, setSelectedKeyword] = useState<{ word: string, note: string } | null>(null);
+  const [selectedKeyword, setSelectedKeyword] = useState<{ word: string, note: string, reference?: LegalReference } | null>(null);
   const [isGeneralNotesExpanded, setIsGeneralNotesExpanded] = useState<boolean>(false);
   const [questionNotesValue, setQuestionNotesValue] = useState<Record<string, string>>({}); // New: State for individual question notes
 
@@ -386,7 +387,8 @@ export default function ChecklistScreen() {
     if (reference) {
       setSelectedKeyword({
         word: fullKey,
-        note: `${reference.title}\n\n${reference.content}`
+        note: `${reference.title}\n\n${reference.content}`,
+        reference: reference
       });
     } else {
       let defaultNote = '';
@@ -701,6 +703,18 @@ export default function ChecklistScreen() {
               <Text style={[styles.modalText, {color: colors.text}]}>
                 {selectedKeyword?.note}
               </Text>
+              {selectedKeyword?.reference && (
+                <View style={styles.metadataContainer}>
+                  <Text style={[styles.lastUpdated, {color: colors.secondaryText}]}>
+                    Son Güncelleme: {formatDate(selectedKeyword.reference.lastUpdated)}
+                  </Text>
+                  {isContentOld(selectedKeyword.reference.lastUpdated) && (
+                    <Text style={[styles.warningText, {color: colors.warning}]}>
+                      {getContentAgeWarning(selectedKeyword.reference.lastUpdated)}
+                    </Text>
+                  )}
+                </View>
+              )}
             </ScrollView>
           </View>
         ) : (
@@ -722,6 +736,18 @@ export default function ChecklistScreen() {
                 <Text style={[styles.modalText, {color: colors.text}]}>
                   {selectedKeyword?.note}
                 </Text>
+                {selectedKeyword?.reference && (
+                  <View style={styles.metadataContainer}>
+                    <Text style={[styles.lastUpdated, {color: colors.secondaryText}]}>
+                      Son Güncelleme: {formatDate(selectedKeyword.reference.lastUpdated)}
+                    </Text>
+                    {isContentOld(selectedKeyword.reference.lastUpdated) && (
+                      <Text style={[styles.warningText, {color: colors.warning}]}>
+                        {getContentAgeWarning(selectedKeyword.reference.lastUpdated)}
+                      </Text>
+                    )}
+                  </View>
+                )}
               </ScrollView>
             </View>
           </View>
@@ -989,5 +1015,23 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 18,
     fontWeight: '600',
+  },
+  metadataContainer: {
+    paddingHorizontal: 16,
+    paddingTop: 8,
+    paddingBottom: 16,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: '#e0e0e0',
+    marginTop: 8,
+  },
+  lastUpdated: {
+    fontSize: 14,
+    fontStyle: 'italic',
+    marginBottom: 4,
+  },
+  warningText: {
+    fontSize: 14,
+    fontWeight: '500',
+    marginTop: 4,
   },
 }); 

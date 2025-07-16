@@ -37,9 +37,13 @@ export interface CaseChecklist {
   createdAt: string;
 }
 
-export type LegalReference = {
+export interface LegalReference {
   code: string;
   article: string;
   title: string;
   content: string;
-}; 
+  lastUpdated: string;    // ISO timestamp (required)
+  checksum: string;       // SHA-256 hash (required)
+  sourceUrl?: string;     // Original URL (optional)
+  firstSeen?: string;     // ISO timestamp when first tracked (optional)
+} 

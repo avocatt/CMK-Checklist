@@ -62,5 +62,44 @@ web-build/
 
 # Data
 /src/data/laws_content
+/src/data/generated/law_content_history.json
+/src/data/generated/law_content_changes.txt
+/src/data/generated/migration_report.txt
+/src/data/cache/
 
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+.env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Backup files
+*.backup
+*.backup.json
+*.bak
+
+# Temporary files
+*.tmp
+*.temp
+migration_report.txt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,5 +1,5 @@
 import checklistDataJson from './checklist.json';
-import legalReferencesJson from './legalReferences.json';
+import legalReferencesJson from './generated/html_content_parsed.json';
 import { Phase, LegalReference } from '../types/index';
 
 // Assuming the JSON files' structure directly matches the Phase[] and Record<string, LegalReference> types.

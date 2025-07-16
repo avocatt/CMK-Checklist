@@ -17,6 +17,8 @@ export const lightColors = {
   checked: '#34C759', // New: Green for checked state (was 'flagged')
   checkedIcon: '#FFFFFF', // New: White checkmark icon (was 'flaggedIcon')
   notesBackground: '#EFEFF4', // Specific for notes area
+  warning: '#FF9500', // Apple Orange for warnings
+  secondaryText: '#8A8A8E', // Same as textSecondary
 };
 
 export const darkColors = {
@@ -35,6 +37,8 @@ export const darkColors = {
   checked: '#30D158', // New: Green for checked state (was 'flagged')
   checkedIcon: '#FFFFFF', // New: White checkmark icon (was 'flaggedIcon')
   notesBackground: '#2C2C2E', // Specific for notes area in dark mode
+  warning: '#FF9F0A', // Apple Orange Dark for warnings
+  secondaryText: '#8E8E93', // Same as textSecondary
 };
 
 export type ColorScheme = typeof lightColors;
