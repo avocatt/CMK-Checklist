@@ -86,6 +86,9 @@ build/
 .coverage
 htmlcov/
 
+# Testing
+coverage/
+
 # Backup files
 *.backup
 *.backup.json
