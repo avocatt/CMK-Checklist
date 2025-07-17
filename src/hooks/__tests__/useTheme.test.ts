@@ -72,7 +72,7 @@ describe('useTheme', () => {
 
       // Simulate system preference change
       (useColorScheme as jest.Mock).mockReturnValue('dark');
-      rerender();
+      rerender({});
 
       expect(result.current.isDarkMode).toBe(true);
       expect(result.current.colors).toEqual(darkColors);

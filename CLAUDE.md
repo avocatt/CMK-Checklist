@@ -20,6 +20,14 @@ npm start
 npm run android  # Start on Android
 npm run ios      # Start on iOS (macOS only)
 npm run web      # Start in web browser
+
+# Testing & Quality
+npm test               # Run all tests
+npm run test:watch     # Run tests in watch mode
+npm run test:coverage  # Run tests with coverage report
+npm run lint           # Run ESLint linter
+npm run lint:fix       # Run ESLint and fix auto-fixable issues
+npm run typecheck      # Run TypeScript type checking
 ```
 
 ## Python Scripts

@@ -89,6 +89,9 @@ htmlcov/
 # Testing
 coverage/
 
+# Linting
+.eslintcache
+
 # Backup files
 *.backup
 *.backup.json

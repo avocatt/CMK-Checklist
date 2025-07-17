@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import { Text, StyleSheet } from 'react-native';
+import { ColorScheme } from '../hooks/useTheme';
 
 interface ProcessedTextPart {
   type: 'highlight';
@@ -28,7 +29,7 @@ export const highlightText = (text: string, searchQuery: string): string | (stri
 export const processText = (
   text: string,
   handleKeywordTap: (keyword: string, articlePart: string) => void,
-  colors: any
+  colors: ColorScheme
 ) => {
   const keywords = [
     'TCK', 'PVSK', 'CMK',
@@ -92,7 +93,7 @@ export const processTextWithHighlighting = (
   searchQuery: string,
   handleKeywordTap: (keyword: string, articlePart: string) => void,
   handleQuestionTagTap: (questionId: string) => void,
-  colors: any
+  colors: ColorScheme
 ) => {
   const highlightedParts = highlightText(text, searchQuery);
 

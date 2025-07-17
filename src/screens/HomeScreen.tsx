@@ -269,9 +269,6 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  darkItemContainer: {
-    backgroundColor: '#2C2C2E', // Will be overridden by inline style
-  },
   itemTextContainer: {
     flex: 1,
   },
@@ -280,16 +277,10 @@ const styles = StyleSheet.create({
     fontWeight: '600', // Semibold
     color: '#000000', // Default light color, overridden by inline style
   },
-  darkItemText: {
-    color: '#FFFFFF', // Will be overridden by inline style
-  },
   itemDate: {
     fontSize: 14, // Increased font size
     color: '#8A8A8E', // Default light color, overridden by inline style
     marginTop: 4,
-  },
-  darkItemDate: {
-    color: '#8E8E93', // Will be overridden by inline style
   },
   itemActionsContainer: {
     flexDirection: 'row',
