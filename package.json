@@ -12,7 +12,16 @@
     "test:coverage": "jest --coverage",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:ios": "eas build --platform ios",
+    "build:android": "eas build --platform android",
+    "build:all": "eas build --platform all",
+    "build:production": "eas build --platform all --profile production",
+    "build:preview": "eas build --platform all --profile preview",
+    "build:development": "eas build --platform all --profile development",
+    "submit:ios": "eas submit --platform ios",
+    "submit:android": "eas submit --platform android",
+    "submit:all": "eas submit --platform all"
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.4",

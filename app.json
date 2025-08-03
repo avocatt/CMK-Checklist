@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Checklist App",
-    "slug": "checklist-app",
+    "name": "CMK Checklist",
+    "slug": "cmk-checklist",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -15,18 +15,27 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cmkchecklist.app",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.cmkchecklist.app",
+      "versionCode": 1
     },
-    "scheme": "checklist-app",
+    "scheme": "cmk-checklist",
     "web": {
       "bundler": "metro",
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0d9da3ea-0cf4-4c3f-9697-dd61cf5ac5f2"
+      }
     }
   }
 }

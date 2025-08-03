@@ -28,6 +28,19 @@ npm run test:coverage  # Run tests with coverage report
 npm run lint           # Run ESLint linter
 npm run lint:fix       # Run ESLint and fix auto-fixable issues
 npm run typecheck      # Run TypeScript type checking
+
+# EAS Build Commands (requires eas login first)
+npm run build:development  # Build development version
+npm run build:preview      # Build preview version for testing
+npm run build:production   # Build production version for stores
+npm run build:ios          # Build iOS only
+npm run build:android      # Build Android only
+npm run build:all          # Build both platforms
+
+# App Store Submission
+npm run submit:ios         # Submit iOS build to App Store
+npm run submit:android     # Submit Android build to Play Store
+npm run submit:all         # Submit to both stores
 ```
 
 ## Python Scripts
@@ -141,7 +154,32 @@ Edit the theme object in `src/hooks/useTheme.ts` - changes apply app-wide automa
 2. Add to `RootStackParamList` in `App.tsx`
 3. Add navigation route in `AppNavigator`
 
+## EAS Build Setup
+
+### Prerequisites
+- Expo account (free)
+- Apple Developer Account ($99/year) for iOS App Store
+- Google Play Console account ($25 one-time) for Android Play Store
+
+### Initial Setup
+1. **Login to EAS**: `eas login`
+2. **Configure project**: `eas build:configure`
+3. **Set up credentials**: 
+   - iOS: `eas credentials -p ios`
+   - Android: `eas credentials -p android`
+
+### Build Process
+- Development builds include debugging capabilities
+- Preview builds are for internal testing
+- Production builds are store-ready
+
+### Configuration Files
+- `eas.json`: Build profiles and configuration
+- `app.json`: App metadata and store information
+- `EAS_SETUP_GUIDE.md`: Detailed setup instructions
+
 ## Debugging Tips
 - Use Expo Go app for testing on physical devices
 - Check AsyncStorage data with: `AsyncStorage.getItem('@CMKChecklist:cases')`
 - Legal reference IDs must match between checklist.json and legalReferences.json
+- Use EAS Build logs for troubleshooting build issues
