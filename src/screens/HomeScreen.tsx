@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import {
   View,
   Text,
@@ -6,18 +6,18 @@ import {
   TouchableOpacity,
   StyleSheet,
   Alert,
-  TextInput,
-  Modal,
   Platform,
   SafeAreaView,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useChecklist } from '../hooks/useChecklist';
 import { useTheme } from '../hooks/useTheme';
 import { CaseChecklist } from '../types';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
+import CreateCaseBottomSheet, { CreateCaseBottomSheetRef } from '../components/CreateCaseBottomSheet';
 
 type RootStackParamList = {
   Home: undefined;
@@ -38,7 +38,7 @@ export default function HomeScreen() {
   const { isDarkMode, colors } = useTheme();
   const navigation = useNavigation<HomeScreenNavigationProp>();
   const isFocused = useIsFocused();
-  const [modalVisible, setModalVisible] = useState(false);
+  const bottomSheetRef = useRef<CreateCaseBottomSheetRef>(null);
   const [newCaseName, setNewCaseName] = useState('');
   const [editingChecklist, setEditingChecklist] = useState<CaseChecklist | null>(null);
   const [renamingName, setRenamingName] = useState('');
@@ -76,24 +76,22 @@ export default function HomeScreen() {
     setNewCaseName(''); // Reset name for new case
     setEditingChecklist(null); // Ensure not in rename mode
     setIsInputFocused(false); // Reset input focus state
-    setModalVisible(true);
+    bottomSheetRef.current?.present();
   };
   
   const handleRename = (checklist: CaseChecklist) => {
     setEditingChecklist(checklist);
     setRenamingName(checklist.name);
     setIsInputFocused(false); // Reset input focus state
-    setModalVisible(true);
+    bottomSheetRef.current?.present();
   };
 
-  const submitModal = async () => {
+  const submitBottomSheet = async () => {
     if (editingChecklist) { // Renaming existing checklist
       if (renamingName.trim()) {
         await renameChecklist(editingChecklist.id, renamingName.trim());
-        setModalVisible(false);
         setEditingChecklist(null);
-      } else {
-        Alert.alert('Hata', 'Görev adı boş olamaz.');
+        bottomSheetRef.current?.dismiss();
       }
     } else { // Creating new checklist
       if (newCaseName.trim()) {
@@ -101,12 +99,15 @@ export default function HomeScreen() {
         if (newId) {
           navigation.navigate('Checklist', { caseId: newId, caseName: newCaseName.trim() });
         }
-        setModalVisible(false);
         setNewCaseName('');
-      } else {
-        Alert.alert('Hata', 'Görev adı boş olamaz.');
+        bottomSheetRef.current?.dismiss();
       }
     }
+  };
+
+  const handleBottomSheetClose = () => {
+    setEditingChecklist(null);
+    setIsInputFocused(false);
   };
 
 
@@ -159,8 +160,9 @@ export default function HomeScreen() {
 
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
-      <StatusBar style={isDarkMode ? 'light' : 'dark'} />
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
+        <StatusBar style={isDarkMode ? 'light' : 'dark'} />
       {allChecklists.length === 0 && !loading ? (
          <View style={[styles.centered, { backgroundColor: colors.background, flex: 1 }]}>
             <Text style={[styles.emptyListText, { color: colors.textSecondary }]}>
@@ -185,58 +187,21 @@ export default function HomeScreen() {
         <Text style={styles.fabText}>+</Text>
       </TouchableOpacity>
 
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false);
-          setEditingChecklist(null);
-        }}
-      >
-        <View style={styles.modalOverlay}>
-          <View style={[styles.modalContainer, { backgroundColor: colors.card }]}>
-            <Text style={[styles.modalTitle, { color: colors.text }]}>
-              {editingChecklist ? "Görevi Yeniden Adlandır" : "Yeni CMK Görevi"}
-            </Text>
-            <TextInput
-              style={[
-                styles.modalInput,
-                { 
-                  backgroundColor: colors.inputBackground, 
-                  color: colors.text,
-                  borderColor: isInputFocused ? colors.accent : colors.border, // Dynamic border color
-                }
-              ]}
-              placeholder="Görev Adı (Örn: Ahmet Yılmaz Dosyası)"
-              placeholderTextColor={colors.placeholder}
-              value={editingChecklist ? renamingName : newCaseName}
-              onChangeText={editingChecklist ? setRenamingName : setNewCaseName}
-              onFocus={() => setIsInputFocused(true)} // Set focus state
-              onBlur={() => setIsInputFocused(false)} // Clear focus state
-            />
-            <View style={styles.modalButtonContainer}>
-              <TouchableOpacity
-                style={[styles.modalButton, { backgroundColor: colors.destructive }]}
-                onPress={() => {
-                  setModalVisible(false);
-                  setEditingChecklist(null);
-                  setIsInputFocused(false); // Reset focus on close
-                }}
-              >
-                <Text style={[styles.modalButtonText, {color: 'white'}]}>İptal</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[styles.modalButton, { backgroundColor: colors.accent }]}
-                onPress={submitModal}
-              >
-                <Text style={[styles.modalButtonText, {color: 'white'}]}>{editingChecklist ? "Kaydet" : "Oluştur"}</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
-    </SafeAreaView>
+        <CreateCaseBottomSheet
+          ref={bottomSheetRef}
+          editingChecklist={editingChecklist}
+          newCaseName={newCaseName}
+          renamingName={renamingName}
+          isInputFocused={isInputFocused}
+          onNewCaseNameChange={setNewCaseName}
+          onRenamingNameChange={setRenamingName}
+          onInputFocus={() => setIsInputFocused(true)}
+          onInputBlur={() => setIsInputFocused(false)}
+          onSubmit={submitBottomSheet}
+          onClose={handleBottomSheetClose}
+        />
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 }
 
@@ -330,56 +295,5 @@ const styles = StyleSheet.create({
   emptyListSubText: {
     fontSize: 14,
     textAlign: 'center',
-  },
-  // Modal styles
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalContainer: {
-    width: '90%',
-    padding: 24, // Increased padding
-    borderRadius: 12, // Consistent border radius with cards
-    ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.15,
-        shadowRadius: 6,
-      },
-      android: {
-        elevation: 5,
-      },
-    }),
-  },
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: '600',
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-  modalInput: {
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
-    marginBottom: 20,
-  },
-  modalButtonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  modalButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-    minWidth: 100,
-    alignItems: 'center',
-  },
-  modalButtonText: {
-    fontSize: 16,
-    fontWeight: '500',
   },
 }); 
