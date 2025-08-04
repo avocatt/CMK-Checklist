@@ -7,8 +7,8 @@ export const formatDate = (isoString: string): string => {
       month: '2-digit',
       year: 'numeric'
     });
-  } catch (error) {
-    console.error('Error formatting date:', error);
+  } catch {
+    // Error formatting date
     return isoString;
   }
 };
@@ -25,8 +25,8 @@ export const formatDateTime = (isoString: string): string => {
       minute: '2-digit',
       hour12: false
     });
-  } catch (error) {
-    console.error('Error formatting datetime:', error);
+  } catch {
+    // Error formatting datetime
     return isoString;
   }
 };
@@ -38,8 +38,8 @@ export const isContentOld = (lastUpdated: string, monthsThreshold: number = 6): 
     sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - monthsThreshold);
     
     return lastUpdatedDate < sixMonthsAgo;
-  } catch (error) {
-    console.error('Error checking content age:', error);
+  } catch {
+    // Error checking content age
     return false;
   }
 };
@@ -72,8 +72,8 @@ export const getTimeAgo = (isoString: string): string => {
       const years = Math.floor(diffInDays / 365);
       return years === 1 ? '1 yıl önce' : `${years} yıl önce`;
     }
-  } catch (error) {
-    console.error('Error calculating time ago:', error);
+  } catch {
+    // Error calculating time ago
     return '';
   }
 };
@@ -99,8 +99,8 @@ function getMonthsSinceUpdate(lastUpdated: string): number {
     const monthDiff = now.getMonth() - lastUpdatedDate.getMonth();
     
     return yearDiff * 12 + monthDiff;
-  } catch (error) {
-    console.error('Error calculating months since update:', error);
+  } catch {
+    // Error calculating months since update
     return 0;
   }
 }

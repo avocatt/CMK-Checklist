@@ -55,7 +55,7 @@ export const LegalReferenceModal: React.FC<LegalReferenceModalProps> = ({
               {selectedKeyword.note}
             </Text>
             {selectedKeyword.reference && (
-              <View style={styles.metadataContainer}>
+              <View style={[styles.metadataContainer, { borderTopColor: colors.border }]}>
                 <Text style={[styles.lastUpdated, { color: colors.secondaryText }]}>
                   Son Güncelleme: {formatDate(selectedKeyword.reference.lastUpdated)}
                 </Text>
@@ -69,7 +69,7 @@ export const LegalReferenceModal: React.FC<LegalReferenceModalProps> = ({
           </ScrollView>
         </View>
       ) : (
-        <View style={[styles.modalOverlay]}>
+        <View style={styles.modalOverlay}>
           <View style={[styles.modalContent, { backgroundColor: colors.card }]}>
             <View style={[styles.modalHeader, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
               <Text style={[styles.modalTitle, { color: colors.text }]}>
@@ -87,7 +87,7 @@ export const LegalReferenceModal: React.FC<LegalReferenceModalProps> = ({
                 {selectedKeyword.note}
               </Text>
               {selectedKeyword.reference && (
-                <View style={styles.metadataContainer}>
+                <View style={[styles.metadataContainer, { borderTopColor: colors.border }]}>
                   <Text style={[styles.lastUpdated, { color: colors.secondaryText }]}>
                     Son Güncelleme: {formatDate(selectedKeyword.reference.lastUpdated)}
                   </Text>
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 16,
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#e0e0e0',
+    // borderTopColor will be set dynamically
     marginTop: 8,
   },
   lastUpdated: {

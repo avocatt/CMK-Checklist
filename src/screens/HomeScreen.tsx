@@ -60,8 +60,6 @@ export default function HomeScreen() {
     navigation.setOptions({
       headerStyle: {
         backgroundColor: colors.background,
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        borderBottomColor: colors.border,
       },
       headerTitleStyle: {
         color: colors.text,
@@ -160,11 +158,11 @@ export default function HomeScreen() {
 
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={styles.fullFlex}>
       <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
         <StatusBar style={isDarkMode ? 'light' : 'dark'} />
       {allChecklists.length === 0 && !loading ? (
-         <View style={[styles.centered, { backgroundColor: colors.background, flex: 1 }]}>
+         <View style={[styles.centered, styles.fullFlex, { backgroundColor: colors.background }]}>
             <Text style={[styles.emptyListText, { color: colors.textSecondary }]}>
             Henüz bir CMK görevi kaydetmediniz.
             </Text>
@@ -217,7 +215,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF', // Default light color, overridden by inline style
+    // backgroundColor set dynamically
     padding: 18, // Increased padding
     marginVertical: 8, // Increased vertical spacing
     marginHorizontal: 12,
@@ -240,11 +238,11 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 18, // Increased font size
     fontWeight: '600', // Semibold
-    color: '#000000', // Default light color, overridden by inline style
+    // color set dynamically
   },
   itemDate: {
     fontSize: 14, // Increased font size
-    color: '#8A8A8E', // Default light color, overridden by inline style
+    // color set dynamically
     marginTop: 4,
   },
   itemActionsContainer: {
@@ -278,7 +276,7 @@ const styles = StyleSheet.create({
   },
   fabText: {
     fontSize: 28,
-    color: 'white',
+    color: '#FFFFFF',
     lineHeight: 30
   },
   centered: {
@@ -295,5 +293,8 @@ const styles = StyleSheet.create({
   emptyListSubText: {
     fontSize: 14,
     textAlign: 'center',
+  },
+  fullFlex: {
+    flex: 1,
   },
 }); 

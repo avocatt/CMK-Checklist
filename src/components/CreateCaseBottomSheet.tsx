@@ -7,7 +7,7 @@ import {
   Alert,
   Platform,
 } from 'react-native';
-import BottomSheet, { BottomSheetView, BottomSheetBackdrop, BottomSheetTextInput } from '@gorhom/bottom-sheet';
+import BottomSheet, { BottomSheetView, BottomSheetBackdrop, BottomSheetTextInput, BottomSheetBackdropProps } from '@gorhom/bottom-sheet';
 import { useTheme } from '../hooks/useTheme';
 import { CaseChecklist } from '../types';
 
@@ -44,7 +44,7 @@ const CreateCaseBottomSheet = forwardRef<CreateCaseBottomSheetRef, CreateCaseBot
   }, ref) => {
     const { colors } = useTheme();
     const bottomSheetRef = React.useRef<BottomSheet>(null);
-    const textInputRef = useRef<any>(null);
+    const textInputRef = useRef<React.ComponentRef<typeof BottomSheetTextInput>>(null);
     const [isBottomSheetVisible, setIsBottomSheetVisible] = React.useState(false);
 
     // Single snap point - let library handle keyboard positioning
@@ -57,7 +57,7 @@ const CreateCaseBottomSheet = forwardRef<CreateCaseBottomSheetRef, CreateCaseBot
     }));
 
     // Custom backdrop component with iOS-style animation
-    const renderBackdrop = useCallback((props: any) => (
+    const renderBackdrop = useCallback((props: BottomSheetBackdropProps) => (
       <BottomSheetBackdrop
         {...props}
         appearsOnIndex={0}
@@ -175,7 +175,7 @@ const WHITE_COLOR = '#FFFFFF';
 
 const styles = StyleSheet.create({
   bottomSheet: {
-    shadowColor: '#000',
+    shadowColor: 'rgba(0, 0, 0, 1)',
     shadowOffset: {
       width: 0,
       height: -4,

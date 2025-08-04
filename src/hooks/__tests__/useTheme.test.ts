@@ -31,7 +31,7 @@ describe('useTheme', () => {
       expect(result.current.colors.background).toBe('#F2F2F7');
       expect(result.current.colors.card).toBe('#FFFFFF');
       expect(result.current.colors.text).toBe('#000000');
-      expect(result.current.colors.accent).toBe('#007AFF');
+      expect(result.current.colors.accent).toBe('#5B9BD5');
       expect(result.current.colors.checked).toBe('#34C759');
       expect(result.current.colors.destructive).toBe('#FF3B30');
     });
@@ -56,7 +56,7 @@ describe('useTheme', () => {
       expect(result.current.colors.background).toBe('#1C1C1E');
       expect(result.current.colors.card).toBe('#2C2C2E');
       expect(result.current.colors.text).toBe('#FFFFFF');
-      expect(result.current.colors.accent).toBe('#0A84FF');
+      expect(result.current.colors.accent).toBe('#6BA8DB');
       expect(result.current.colors.checked).toBe('#30D158');
       expect(result.current.colors.destructive).toBe('#FF453A');
     });

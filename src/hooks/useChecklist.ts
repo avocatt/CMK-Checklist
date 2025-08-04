@@ -23,8 +23,8 @@ export const useChecklist = () => {
   const saveAllChecklists = useCallback(async (checklistsToSave: CaseChecklist[]) => {
     try {
       await AsyncStorage.setItem(ALL_CHECKLISTS_KEY, JSON.stringify(checklistsToSave));
-    } catch (error) {
-      console.error('Error saving all checklists:', error);
+    } catch {
+      // Error saving all checklists
     }
   }, []);
 
@@ -38,8 +38,8 @@ export const useChecklist = () => {
       } else {
         setAllChecklists([]);
       }
-    } catch (error) {
-      console.error('Error loading all checklists:', error);
+    } catch {
+      // Error loading all checklists
       setAllChecklists([]); // Fallback to empty array on error
     } finally {
       setLoading(false);
@@ -53,7 +53,7 @@ export const useChecklist = () => {
 
   const createNewChecklist = useCallback(async (name: string): Promise<string | null> => {
     if (!name.trim()) {
-      console.error("Checklist name cannot be empty");
+      // Checklist name cannot be empty
       return null; // Or throw an error
     }
     const newId = uuidv4();
@@ -169,7 +169,7 @@ export const useChecklist = () => {
   
   const renameChecklist = useCallback(async (checklistId: string, newName: string) => {
     if (!newName.trim()) {
-        console.error("Checklist name cannot be empty for renaming");
+        // Checklist name cannot be empty for renaming
         return;
     }
     const updatedChecklists = allChecklists.map(c => {

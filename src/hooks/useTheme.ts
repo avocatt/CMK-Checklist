@@ -6,7 +6,7 @@ export const lightColors = {
   card: '#FFFFFF',
   text: '#000000',
   textSecondary: '#8A8A8E', // Apple System Gray
-  accent: '#007AFF', // Apple Blue
+  accent: '#5B9BD5', // Brand Blue (matches app icon/splash)
   accentGreen: '#34C759', // Apple Green
   border: '#D1D1D6', // Apple System Gray 4
   placeholder: '#C7C7CD', // Apple System Gray 2
@@ -26,7 +26,7 @@ export const darkColors = {
   card: '#2C2C2E', // Apple System Gray 5 Dark
   text: '#FFFFFF',
   textSecondary: '#8E8E93', // Apple System Gray Dark
-  accent: '#0A84FF', // Apple Blue Dark
+  accent: '#6BA8DB', // Brand Blue Dark (lighter for dark backgrounds)
   accentGreen: '#30D158', // Apple Green Dark
   border: '#38383A', // Apple System Gray 4 Dark
   placeholder: '#8E8E93',

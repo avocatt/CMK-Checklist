@@ -194,7 +194,7 @@ export default function ChecklistScreen() {
     if (scrollViewRef.current && targetY !== undefined) {
       scrollViewRef.current.scrollTo({ y: targetY - 100, animated: true }); // -100 for some padding
     } else {
-      console.warn(`Question ID ${questionId} not found for scrolling.`);
+      // Question ID not found for scrolling
     }
   }, []); // Depend on nothing as refs are stable
 
@@ -203,7 +203,7 @@ export default function ChecklistScreen() {
 
   if (checklistLoading || !activeChecklist) {
     return (
-      <View style={[styles.container, {backgroundColor: colors.background, justifyContent: 'center', alignItems: 'center'}]}>
+      <View style={[styles.container, styles.centered, {backgroundColor: colors.background}]}>
         <Text style={{color: colors.text}}>Görev yükleniyor...</Text>
       </View>
     );
@@ -213,7 +213,7 @@ export default function ChecklistScreen() {
     <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
     <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={{ flex: 1 }}
+        style={styles.fullFlex}
         keyboardVerticalOffset={Platform.OS === "ios" ? 60 : 0}
     >
       <StatusBar style={isDarkMode ? 'light' : 'dark'} />
@@ -300,5 +300,12 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
     paddingTop: 0, // Remove padding from scrollview as headerSection now handles top content
+  },
+  centered: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  fullFlex: {
+    flex: 1,
   },
 }); 

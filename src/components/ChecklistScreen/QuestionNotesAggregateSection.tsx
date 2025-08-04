@@ -28,13 +28,13 @@ export const QuestionNotesAggregateSection: React.FC<QuestionNotesAggregateSecti
   }
 
   return (
-    <View style={[styles.phaseContainer, { backgroundColor: colors.card, marginTop: 16 }]}>
+    <View style={[styles.phaseContainer, styles.phaseContainerMargin, { backgroundColor: colors.card }]}>
       <View style={[styles.phaseHeader, { borderBottomColor: colors.border }]}>
         <Text style={[styles.phaseTitle, { color: colors.text }]}>
           Sorulara Eklenen Notlar
         </Text>
       </View>
-      <View style={[styles.itemsContainer, { paddingHorizontal: 16, paddingVertical: 12 }]}>
+      <View style={[styles.itemsContainer, styles.itemsPadding]}>
         {Object.entries(questionNotes).map(([qId, noteContent]) => (
           <View key={`qn-${qId}`} style={styles.questionNoteAggregateItem}>
             <Text style={[styles.questionText, { color: colors.text }]}>
@@ -87,5 +87,12 @@ const styles = StyleSheet.create({
   questionText: {
     fontSize: 16,
     lineHeight: 22,
+  },
+  phaseContainerMargin: {
+    marginTop: 16,
+  },
+  itemsPadding: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
   },
 });
