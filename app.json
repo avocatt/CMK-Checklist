@@ -19,14 +19,6 @@
       "bundleIdentifier": "com.cmkchecklist.app",
       "buildNumber": "1"
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.cmkchecklist.app",
-      "versionCode": 1
-    },
     "scheme": "cmk-checklist",
     "web": {
       "bundler": "metro",

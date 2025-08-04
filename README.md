@@ -52,7 +52,7 @@ Uygulamayı yerel makinenizde geliştirme veya test amacıyla çalıştırmak i�
 
 *   [Node.js](https://nodejs.org/en/) (v14 veya üzeri önerilir)
 *   [npm](https://www.npmjs.com/) veya [Yarn](https://yarnpkg.com/)
-*   iOS veya Android cihazınızda yüklü [Expo Go uygulaması](https://expo.dev/client)
+*   iOS cihazınızda yüklü [Expo Go uygulaması](https://expo.dev/client)
 
 **Kurulum:**
 
