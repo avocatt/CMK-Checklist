@@ -15,7 +15,7 @@ import { useChecklist } from '../hooks/useChecklist';
 import { useTheme } from '../hooks/useTheme';
 import { CaseChecklist } from '../types';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import CreateCaseBottomSheet, { CreateCaseBottomSheetRef } from '../components/CreateCaseBottomSheet';
 
@@ -24,7 +24,7 @@ type RootStackParamList = {
   Checklist: { caseId: string; caseName: string };
 };
 
-type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
 
 export default function HomeScreen() {
   const {

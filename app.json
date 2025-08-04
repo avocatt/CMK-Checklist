@@ -1,15 +1,25 @@
 {
   "expo": {
-    "name": "CMK Checklist",
+    "name": "Zorunlu Müdafinin Kontrol Listesi",
     "slug": "cmk-checklist",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "17.0"
+          }
+        }
+      ]
+    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#5B9BD5"
     },
     "assetBundlePatterns": [
       "**/*"
