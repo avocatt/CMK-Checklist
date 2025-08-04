@@ -1,7 +1,7 @@
 # Privacy Policy for CMK Checklist
 
-**Effective Date:** [To be filled when published]  
-**Last Updated:** [To be filled when published]
+**Effective Date:** August 4, 2025  
+**Last Updated:** August 4, 2025
 
 ## Introduction
 
