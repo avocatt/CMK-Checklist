@@ -31,15 +31,15 @@ Uygulamayı çalışırken görün:
 
 | Ana Ekran (Dava Listesi)                                      | Yeni CMK Dosyası Ekleme                    |
 | :------------------------------------------------------------ | :---------------------------------------------- |
-| <img src="docs/images/homepage.png" alt="Ana Ekran" width="300"> | <img src="docs/images/add-new-cmk.png" alt="Yeni CMK Ekleme" width="300"> |
+| <img src="project-docs/screenshots/01-case-list-main.png" alt="Ana Ekran" width="300"> | <img src="project-docs/screenshots/02-add-new-case.png" alt="Yeni CMK Ekleme" width="300"> |
 
-| Kontrol Listesi Ekranı                               | Genel Not Ekleme                           |
+| Kontrol Listesi Ekranı                               | Kontrol Listesi Soruları                           |
 | :------------------------------------------------------------ | :---------------------------------------------------- |
-| <img src="docs/images/checklistscreen.png" alt="Kontrol Listesi" width="300"> | <img src="docs/images/adding-general-notes.png" alt="Genel Not Ekleme" width="300"> |
+| <img src="project-docs/screenshots/03-checklist-overview.png" alt="Kontrol Listesi" width="300"> | <img src="project-docs/screenshots/04-checklist-questions.png" alt="Kontrol Listesi Soruları" width="300"> |
 
-| Madde Bazında Not Ekleme                               | Hukuki Referans Modal'ı                           |
+| Hukuki Referans Modal'ı                               | Arama ve Not Ekleme                           |
 | :------------------------------------------------------------ | :---------------------------------------------------- |
-| <img src="docs/images/adding-notes-per-item.png" alt="Madde Bazında Not" width="300"> | <img src="docs/images/legal-reference-modal.png" alt="Hukuki Referans Modal" width="300"> |
+| <img src="project-docs/screenshots/05-legal-reference-modal.png" alt="Hukuki Referans Modal" width="300"> | <img src="project-docs/screenshots/06-search-and-notes.png" alt="Arama ve Not Ekleme" width="300"> |
 
 
 ---
@@ -87,7 +87,7 @@ Proje standart bir React Native/Expo yapısını takip eder:
 ```
 cmk-checklist/
 ├── assets/                 # Uygulama ikonları ve açılış ekranı
-├── docs/                   # Ekran görüntüleri dahil dokümantasyon
+├── project-docs/           # Ekran görüntüleri dahil dokümantasyon
 ├── scripts/                # Veri işleme için Python betikleri
 │   ├── law_parser.py       # Hukuk HTML dosyalarını ayrıştırma betiği
 │   ├── scrape_laws.py      # Hukuk içeriğini kazıma betiği
