@@ -31,15 +31,15 @@ Uygulamayı çalışırken görün:
 
 | Ana Ekran (Dava Listesi)                                      | Yeni CMK Dosyası Ekleme                    |
 | :------------------------------------------------------------ | :---------------------------------------------- |
-| <img src="project-docs/screenshots/01-case-list-main.png" alt="Ana Ekran" width="300"> | <img src="project-docs/screenshots/02-add-new-case.png" alt="Yeni CMK Ekleme" width="300"> |
+| <img src="project-docs/screenshots/iphone/01-case-list-main.png" alt="Ana Ekran" width="300"> | <img src="project-docs/screenshots/iphone/02-add-new-case.png" alt="Yeni CMK Ekleme" width="300"> |
 
 | Kontrol Listesi Ekranı                               | Kontrol Listesi Soruları                           |
 | :------------------------------------------------------------ | :---------------------------------------------------- |
-| <img src="project-docs/screenshots/03-checklist-overview.png" alt="Kontrol Listesi" width="300"> | <img src="project-docs/screenshots/04-checklist-questions.png" alt="Kontrol Listesi Soruları" width="300"> |
+| <img src="project-docs/screenshots/iphone/03-checklist-overview.png" alt="Kontrol Listesi" width="300"> | <img src="project-docs/screenshots/iphone/04-checklist-questions.png" alt="Kontrol Listesi Soruları" width="300"> |
 
 | Hukuki Referans Modal'ı                               | Arama ve Not Ekleme                           |
 | :------------------------------------------------------------ | :---------------------------------------------------- |
-| <img src="project-docs/screenshots/05-legal-reference-modal.png" alt="Hukuki Referans Modal" width="300"> | <img src="project-docs/screenshots/06-search-and-notes.png" alt="Arama ve Not Ekleme" width="300"> |
+| <img src="project-docs/screenshots/iphone/05-legal-reference-modal.png" alt="Hukuki Referans Modal" width="300"> | <img src="project-docs/screenshots/iphone/06-search-and-notes.png" alt="Arama ve Not Ekleme" width="300"> |
 
 
 ---
