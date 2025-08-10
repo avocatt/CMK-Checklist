@@ -98,9 +98,9 @@ Ceza hukuku avukatları için vazgeçilmez araç! CMK prosedürlerini sistematik
 
 ## Version Information
 
-**Version:** 1.0.0  
+**Version:** 1.0.1  
 **Release Notes:** 
-İlk sürüm - CMK zorunlu müdafiliği için kapsamlı kontrol listesi sistemi. Etkileşimli hukuki referanslar, çoklu dosya yönetimi ve güvenli veri saklama özellikleri.
+Küçük hata düzeltmeleri ve performans iyileştirmeleri. Uygulama açıklaması ve metadata güncellemeleri.
 
 ## Support Information
 
