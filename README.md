@@ -3,7 +3,7 @@
 
 Avukatların, CMK dosyalarına ilişkin kritik adımları ve sorunları etkin bir şekilde yönetmelerine ve takip etmelerine yardımcı olmak için React Native ve Expo ile geliştirilmiş bir mobil uygulamadır. Her dava (görev) kendi kontrol listesine sahiptir.
 
-**Avukathakleri.net** (https://www.avukathakleri.net/zorunlu-mudafinin-cmk-kontrol-listesi/) tarafından paylaşılan kontrol listesine dayanmaktadır.
+Bu uygulamada kullanılan kontrol listesi Bahçeşehir Üniversitesi IGUL direktörlüğü tarafından uygulamacı avukatlarla birlikte hazırlanmıştır. 
 
 ---
 
